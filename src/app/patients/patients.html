@@ -1,619 +1,439 @@
-
-<div class="app-body font-body-md">
-  <header class="app-header">
-    <div class="app-header__left">
-      <button aria-label="Menu" class="app-icon-btn">
-        <span class="material-symbols-outlined">menu</span>
-      </button>
-
-      <a class="app-logo" routerLink="/dashboard">
-        <span class="material-symbols-outlined app-logo__icon fill">
-          health_and_safety
-        </span>
-        <span class="app-logo__text font-headline-md">
-          HealthOS <span class="app-logo__text-sub">AI</span>
-        </span>
-      </a>
-
-      <h1 class="app-header__title">
+<div class="pt-page">
+  <!-- Top Header Controls for Mobile / General -->
+  <div class="pt-toolbar">
+    <div class="pt-toolbar__title-row">
+      <h2 class="pt-toolbar__title">
         Patient Directory
-      </h1>
-    </div>
-
-  <!-- Center Search Input for Patient & Reports screens -->
-  <div class="app-header__search">
-    <div class="app-header__search-inner">
-      <span class="material-symbols-outlined app-header__search-icon">
-        search
+      </h2>
+      <span class="pt-toolbar__count font-label-sm">
+        7 Patients
       </span>
-      <input
-        type="text"
-        value=""
-        placeholder="Search patients by name, ID, or condition..."
-        class="app-header__search-input"
-      />
     </div>
-  </div>
 
-    <!-- Right Top Nav & Action Buttons -->
-    <div class="app-header__right">
-      <!-- Top Nav Links for Desktop -->
-      <nav class="app-header__nav">
-      <a
-        routerLink="/dashboard"
-        class="app-header__nav-link"
-      >
-        Dashboard
-      </a>
-      <a
-        routerLink="/patients"
-        class="app-header__nav-link app-header__nav-link--active"
-      >
-        Patients
-      </a>
-      <a
-        routerLink="/consultations"
-        class="app-header__nav-link"
-      >
-        Consultations
-      </a>
-      <a
-        routerLink="/reports"
-        class="app-header__nav-link"
-      >
-        Reports
-      </a>
-      </nav>
-
-      <!-- Notifications Icon (closed by default) -->
-      <div class="app-header__notif">
-        <button
-          class="app-icon-btn"
-          aria-label="Notifications"
-        >
-          <span class="material-symbols-outlined">notifications</span>
-          <span class="app-header__notif-dot"></span>
+    <!-- Mobile Filter & Search Bar -->
+    <div class="pt-toolbar__controls">
+      <div class="pt-filter-tabs">
+        <button class="pt-filter-tab pt-filter-tab--active font-label-sm">
+          All
+        </button>
+        <button class="pt-filter-tab font-label-sm">
+          Recent
+        </button>
+        <button class="pt-filter-tab font-label-sm">
+          Critical
         </button>
       </div>
 
-      <!-- View Full AI Summary Action Button -->
-      <button type="button" class="app-btn-ai">
-        <span class="material-symbols-outlined fill">
-          auto_awesome
-        </span>
-        <span class="app-hide-mobile">View Full AI Summary</span>
-        <span class="app-show-mobile">AI</span>
-      </button>
-
-      <!-- New Patient Button -->
-      <button type="button" class="app-btn-primary">
-        <span class="material-symbols-outlined">add</span>
-        <span class="app-hide-mobile">New Patient</span>
+      <button class="pt-sort-btn font-label-sm">
+        <span class="material-symbols-outlined">sort</span>
+        <span class="app-hide-mobile">A-Z</span>
       </button>
     </div>
-  </header>
+  </div>
 
-    <div class="app-body-layout">
-    <aside class="app-sidebar">
-      <div class="app-sidebar__inner">
-        <!-- Mobile Close Button -->
-        <div class="app-sidebar__mobile-head">
-          <span class="app-sidebar__mobile-title font-headline-md">healthos-ai Navigation</span>
-          <button class="app-sidebar__close">
-            <span class="material-symbols-outlined">close</span>
-          </button>
-        </div>
-
-        <!-- Practitioner Profile Header -->
-        <div class="app-sidebar__profile">
-          <div class="app-sidebar__profile-row">
-            <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTyOI8Qm5FrsN5y88waJmIP-AF9pzqnPHCwC9OTgJ81T0MibdAbYr0Bq5pmnhfWeRbqxYFCFLmbBd-RYFnDuVOpC-YZ-3ENuOHjdpFe65NYIF7madviOT7DGzvoiFLfA_7vRFjiMen37TFpNqGEfj4_X2ptr0D6xK_TUJd5jF3Md_S9VMJTscTUXfQVP_5_PsIaUzFiHRnber9IfePWNs4uK7zMVB5PRFxejIO9_tqPwc9MVFo6rt_gQ"
-              alt="Dr. Reed"
-              class="app-sidebar__avatar"
-            />
-            <div class="app-sidebar__profile-info">
-              <h2 class="app-sidebar__profile-name font-headline-md">
-                Dr. Reed
-              </h2>
-              <p class="app-sidebar__profile-role font-label-sm">Lead Practitioner</p>
-              <p class="app-sidebar__profile-id font-label-sm">
-                Medical ID: 884-2103
+  <!-- Split Pane Container -->
+  <div class="pt-split">
+    <!-- Left List Pane -->
+    <section class="pt-list-pane">
+      <div class="pt-card">
+        <div class="pt-card__row">
+          <div class="pt-card__left">
+            <div class="pt-avatar">
+              AS
+            </div>
+            <div>
+              <h3 class="pt-card__name">
+                Anna Smith
+              </h3>
+              <p class="pt-card__meta font-label-sm">
+                MRN-100005 • 30 yrs
+              </p>
+              <p class="pt-card__condition font-data-tabular">
+                Asthma (Mild intermittent)
               </p>
             </div>
           </div>
+
+          <div class="pt-card__right">
+            <span class="pt-badge pt-badge--stable font-label-sm">
+              STABLE
+            </span>
+            <span class="pt-card__date font-label-sm">2026-07-28</span>
+          </div>
         </div>
 
-        <!-- Nav Items -->
-        <nav class="app-sidebar__nav">
-        <a
-          routerLink="/dashboard"
-          class="app-sidebar__link font-label-sm"
-        >
-          <span class="material-symbols-outlined app-sidebar__link-icon">
-            dashboard
-          </span>
-          <span>Dashboard</span>
-        </a>
-        <a
-          routerLink="/patients"
-          class="app-sidebar__link app-sidebar__link--active font-label-sm"
-        >
-          <span class="material-symbols-outlined app-sidebar__link-icon--active fill">
-            group
-          </span>
-          <span>Patients</span>
-        </a>
-        <a
-          routerLink="/consultations"
-          class="app-sidebar__link font-label-sm"
-        >
-          <span class="material-symbols-outlined app-sidebar__link-icon">
-            medical_services
-          </span>
-          <span>Consultations</span>
-        </a>
-        <a
-          routerLink="/reports"
-          class="app-sidebar__link font-label-sm"
-        >
-          <span class="material-symbols-outlined app-sidebar__link-icon">
-            description
-          </span>
-          <span>Reports</span>
-        </a>
-        </nav>
-
-        <!-- Sign Out Section -->
-        <div class="app-sidebar__signout">
+        <!-- Mobile Quick Action Strip inside item -->
+        <div class="pt-card__mobile-actions">
           <a
-            routerLink="/login"
-            class="app-sidebar__signout-link font-label-sm"
+            routerLink="/patients"
+            class="pt-card__action pt-card__action--ghost font-label-sm"
           >
-            <span class="material-symbols-outlined">logout</span>
-            <span>Sign Out</span>
+            <span class="material-symbols-outlined">clinical_notes</span> Chart
+          </a>
+          <a
+            routerLink="/consultations"
+            class="pt-card__action pt-card__action--solid font-label-sm"
+          >
+            <span class="material-symbols-outlined">medical_services</span> Consult
           </a>
         </div>
       </div>
-    </aside>
-
-      <main class="app-main">
-        <div class="pt-page">
-          <!-- Top Header Controls for Mobile / General -->
-          <div class="pt-toolbar">
-            <div class="pt-toolbar__title-row">
-              <h2 class="pt-toolbar__title">
-                Patient Directory
-              </h2>
-              <span class="pt-toolbar__count font-label-sm">
-                7 Patients
-              </span>
+      <div class="pt-card pt-card--active">
+        <div class="pt-card__row">
+          <div class="pt-card__left">
+            <div class="pt-avatar">
+              EV
             </div>
-
-            <!-- Mobile Filter & Search Bar -->
-            <div class="pt-toolbar__controls">
-              <div class="pt-filter-tabs">
-                <button class="pt-filter-tab pt-filter-tab--active font-label-sm">
-                  All
-                </button>
-                <button class="pt-filter-tab font-label-sm">
-                  Recent
-                </button>
-                <button class="pt-filter-tab font-label-sm">
-                  Critical
-                </button>
-              </div>
-
-              <button class="pt-sort-btn font-label-sm">
-                <span class="material-symbols-outlined">sort</span>
-                <span class="app-hide-mobile">A-Z</span>
-              </button>
+            <div>
+              <h3 class="pt-card__name">
+                Eleanor Vance
+              </h3>
+              <p class="pt-card__meta font-label-sm">
+                MRN-100001 • 65 yrs
+              </p>
+              <p class="pt-card__condition font-data-tabular">
+                Essential Hypertension (Primary), Type 2 Diabetes Mellitus, Osteoarthritis (Knee)
+              </p>
             </div>
           </div>
 
-          <!-- Split Pane Container -->
-          <div class="pt-split">
-            <!-- Left List Pane -->
-            <section class="pt-list-pane">
-          <div class="pt-card">
-            <div class="pt-card__row">
-              <div class="pt-card__left">
-                <div class="pt-avatar">
-                  AS
-                </div>
-                <div>
-                  <h3 class="pt-card__name">
-                    Anna Smith
-                  </h3>
-                  <p class="pt-card__meta font-label-sm">
-                    MRN-100005 • 30 yrs
-                  </p>
-                  <p class="pt-card__condition font-data-tabular">
-                    Asthma (Mild intermittent)
-                  </p>
-                </div>
-              </div>
+          <div class="pt-card__right">
+            <span class="pt-badge pt-badge--high font-label-sm">
+              HIGH RISK
+            </span>
+            <span class="pt-card__date font-label-sm">2026-07-29</span>
+          </div>
+        </div>
 
-              <div class="pt-card__right">
-                <span class="pt-badge pt-badge--stable font-label-sm">
-                  STABLE
-                </span>
-                <span class="pt-card__date font-label-sm">2026-07-28</span>
-              </div>
+        <!-- Mobile Quick Action Strip inside item -->
+        <div class="pt-card__mobile-actions">
+          <a
+            routerLink="/patients"
+            class="pt-card__action pt-card__action--ghost font-label-sm"
+          >
+            <span class="material-symbols-outlined">clinical_notes</span> Chart
+          </a>
+          <a
+            routerLink="/consultations"
+            class="pt-card__action pt-card__action--solid font-label-sm"
+          >
+            <span class="material-symbols-outlined">medical_services</span> Consult
+          </a>
+        </div>
+      </div>
+      <div class="pt-card">
+        <div class="pt-card__row">
+          <div class="pt-card__left">
+            <div class="pt-avatar">
+              JL
             </div>
-
-            <!-- Mobile Quick Action Strip inside item -->
-            <div class="pt-card__mobile-actions">
-              <a
-                routerLink="/patients"
-                class="pt-card__action pt-card__action--ghost font-label-sm"
-              >
-                <span class="material-symbols-outlined">clinical_notes</span> Chart
-              </a>
-              <a
-                routerLink="/consultations"
-                class="pt-card__action pt-card__action--solid font-label-sm"
-              >
-                <span class="material-symbols-outlined">medical_services</span> Consult
-              </a>
+            <div>
+              <h3 class="pt-card__name">
+                Jameson Locke
+              </h3>
+              <p class="pt-card__meta font-label-sm">
+                MRN-100002 • 48 yrs
+              </p>
+              <p class="pt-card__condition font-data-tabular">
+                Routine Checkup, Mild Dyslipidemia
+              </p>
             </div>
           </div>
-          <div class="pt-card pt-card--active">
-            <div class="pt-card__row">
-              <div class="pt-card__left">
-                <div class="pt-avatar">
-                  EV
-                </div>
-                <div>
-                  <h3 class="pt-card__name">
-                    Eleanor Vance
-                  </h3>
-                  <p class="pt-card__meta font-label-sm">
-                    MRN-100001 • 65 yrs
-                  </p>
-                  <p class="pt-card__condition font-data-tabular">
-                    Essential Hypertension (Primary), Type 2 Diabetes Mellitus, Osteoarthritis (Knee)
-                  </p>
-                </div>
-              </div>
 
-              <div class="pt-card__right">
-                <span class="pt-badge pt-badge--high font-label-sm">
-                  HIGH RISK
-                </span>
-                <span class="pt-card__date font-label-sm">2026-07-29</span>
-              </div>
+          <div class="pt-card__right">
+            <span class="pt-badge pt-badge--stable font-label-sm">
+              STABLE
+            </span>
+            <span class="pt-card__date font-label-sm">2026-07-28</span>
+          </div>
+        </div>
+
+        <!-- Mobile Quick Action Strip inside item -->
+        <div class="pt-card__mobile-actions">
+          <a
+            routerLink="/patients"
+            class="pt-card__action pt-card__action--ghost font-label-sm"
+          >
+            <span class="material-symbols-outlined">clinical_notes</span> Chart
+          </a>
+          <a
+            routerLink="/consultations"
+            class="pt-card__action pt-card__action--solid font-label-sm"
+          >
+            <span class="material-symbols-outlined">medical_services</span> Consult
+          </a>
+        </div>
+      </div>
+      <div class="pt-card">
+        <div class="pt-card__row">
+          <div class="pt-card__left">
+            <div class="pt-avatar">
+              JD
             </div>
-
-            <!-- Mobile Quick Action Strip inside item -->
-            <div class="pt-card__mobile-actions">
-              <a
-                routerLink="/patients"
-                class="pt-card__action pt-card__action--ghost font-label-sm"
-              >
-                <span class="material-symbols-outlined">clinical_notes</span> Chart
-              </a>
-              <a
-                routerLink="/consultations"
-                class="pt-card__action pt-card__action--solid font-label-sm"
-              >
-                <span class="material-symbols-outlined">medical_services</span> Consult
-              </a>
+            <div>
+              <h3 class="pt-card__name">
+                Jane Doe
+              </h3>
+              <p class="pt-card__meta font-label-sm">
+                MRN-100007 • 41 yrs
+              </p>
+              <p class="pt-card__condition font-data-tabular">
+                Tension Headache vs. Migraine
+              </p>
             </div>
           </div>
-          <div class="pt-card">
-            <div class="pt-card__row">
-              <div class="pt-card__left">
-                <div class="pt-avatar">
-                  JL
-                </div>
-                <div>
-                  <h3 class="pt-card__name">
-                    Jameson Locke
-                  </h3>
-                  <p class="pt-card__meta font-label-sm">
-                    MRN-100002 • 48 yrs
-                  </p>
-                  <p class="pt-card__condition font-data-tabular">
-                    Routine Checkup, Mild Dyslipidemia
-                  </p>
-                </div>
-              </div>
 
-              <div class="pt-card__right">
-                <span class="pt-badge pt-badge--stable font-label-sm">
-                  STABLE
-                </span>
-                <span class="pt-card__date font-label-sm">2026-07-28</span>
-              </div>
+          <div class="pt-card__right">
+            <span class="pt-badge pt-badge--active font-label-sm">
+              Active
+            </span>
+            <span class="pt-card__date font-label-sm">2026-08-02</span>
+          </div>
+        </div>
+
+        <!-- Mobile Quick Action Strip inside item -->
+        <div class="pt-card__mobile-actions">
+          <a
+            routerLink="/patients"
+            class="pt-card__action pt-card__action--ghost font-label-sm"
+          >
+            <span class="material-symbols-outlined">clinical_notes</span> Chart
+          </a>
+          <a
+            routerLink="/consultations"
+            class="pt-card__action pt-card__action--solid font-label-sm"
+          >
+            <span class="material-symbols-outlined">medical_services</span> Consult
+          </a>
+        </div>
+      </div>
+      <div class="pt-card">
+        <div class="pt-card__row">
+          <div class="pt-card__left">
+            <div class="pt-avatar">
+              JD
             </div>
-
-            <!-- Mobile Quick Action Strip inside item -->
-            <div class="pt-card__mobile-actions">
-              <a
-                routerLink="/patients"
-                class="pt-card__action pt-card__action--ghost font-label-sm"
-              >
-                <span class="material-symbols-outlined">clinical_notes</span> Chart
-              </a>
-              <a
-                routerLink="/consultations"
-                class="pt-card__action pt-card__action--solid font-label-sm"
-              >
-                <span class="material-symbols-outlined">medical_services</span> Consult
-              </a>
+            <div>
+              <h3 class="pt-card__name">
+                John Doe
+              </h3>
+              <p class="pt-card__meta font-label-sm">
+                MRN-100004 • 36 yrs
+              </p>
+              <p class="pt-card__condition font-data-tabular">
+                Acute viral pharyngitis, Seasonal allergies
+              </p>
             </div>
           </div>
-          <div class="pt-card">
-            <div class="pt-card__row">
-              <div class="pt-card__left">
-                <div class="pt-avatar">
-                  JD
-                </div>
-                <div>
-                  <h3 class="pt-card__name">
-                    Jane Doe
-                  </h3>
-                  <p class="pt-card__meta font-label-sm">
-                    MRN-100007 • 41 yrs
-                  </p>
-                  <p class="pt-card__condition font-data-tabular">
-                    Tension Headache vs. Migraine
-                  </p>
-                </div>
-              </div>
 
-              <div class="pt-card__right">
-                <span class="pt-badge pt-badge--active font-label-sm">
-                  Active
-                </span>
-                <span class="pt-card__date font-label-sm">2026-08-02</span>
-              </div>
+          <div class="pt-card__right">
+            <span class="pt-badge pt-badge--active font-label-sm">
+              Active
+            </span>
+            <span class="pt-card__date font-label-sm">2026-07-29</span>
+          </div>
+        </div>
+
+        <!-- Mobile Quick Action Strip inside item -->
+        <div class="pt-card__mobile-actions">
+          <a
+            routerLink="/patients"
+            class="pt-card__action pt-card__action--ghost font-label-sm"
+          >
+            <span class="material-symbols-outlined">clinical_notes</span> Chart
+          </a>
+          <a
+            routerLink="/consultations"
+            class="pt-card__action pt-card__action--solid font-label-sm"
+          >
+            <span class="material-symbols-outlined">medical_services</span> Consult
+          </a>
+        </div>
+      </div>
+      <div class="pt-card">
+        <div class="pt-card__row">
+          <div class="pt-card__left">
+            <div class="pt-avatar">
+              MG
             </div>
-
-            <!-- Mobile Quick Action Strip inside item -->
-            <div class="pt-card__mobile-actions">
-              <a
-                routerLink="/patients"
-                class="pt-card__action pt-card__action--ghost font-label-sm"
-              >
-                <span class="material-symbols-outlined">clinical_notes</span> Chart
-              </a>
-              <a
-                routerLink="/consultations"
-                class="pt-card__action pt-card__action--solid font-label-sm"
-              >
-                <span class="material-symbols-outlined">medical_services</span> Consult
-              </a>
+            <div>
+              <h3 class="pt-card__name">
+                Maria Garcia
+              </h3>
+              <p class="pt-card__meta font-label-sm">
+                MRN-100006 • 34 yrs
+              </p>
+              <p class="pt-card__condition font-data-tabular">
+                Severe Gastroenteritis, Dehydration
+              </p>
             </div>
           </div>
-          <div class="pt-card">
-            <div class="pt-card__row">
-              <div class="pt-card__left">
-                <div class="pt-avatar">
-                  JD
-                </div>
-                <div>
-                  <h3 class="pt-card__name">
-                    John Doe
-                  </h3>
-                  <p class="pt-card__meta font-label-sm">
-                    MRN-100004 • 36 yrs
-                  </p>
-                  <p class="pt-card__condition font-data-tabular">
-                    Acute viral pharyngitis, Seasonal allergies
-                  </p>
-                </div>
-              </div>
 
-              <div class="pt-card__right">
-                <span class="pt-badge pt-badge--active font-label-sm">
-                  Active
-                </span>
-                <span class="pt-card__date font-label-sm">2026-07-29</span>
-              </div>
+          <div class="pt-card__right">
+            <span class="pt-badge pt-badge--inpatient font-label-sm">
+              Inpatient
+            </span>
+            <span class="pt-card__date font-label-sm">2026-07-27</span>
+          </div>
+        </div>
+
+        <!-- Mobile Quick Action Strip inside item -->
+        <div class="pt-card__mobile-actions">
+          <a
+            routerLink="/patients"
+            class="pt-card__action pt-card__action--ghost font-label-sm"
+          >
+            <span class="material-symbols-outlined">clinical_notes</span> Chart
+          </a>
+          <a
+            routerLink="/consultations"
+            class="pt-card__action pt-card__action--solid font-label-sm"
+          >
+            <span class="material-symbols-outlined">medical_services</span> Consult
+          </a>
+        </div>
+      </div>
+      <div class="pt-card">
+        <div class="pt-card__row">
+          <div class="pt-card__left">
+            <div class="pt-avatar">
+              SJ
             </div>
-
-            <!-- Mobile Quick Action Strip inside item -->
-            <div class="pt-card__mobile-actions">
-              <a
-                routerLink="/patients"
-                class="pt-card__action pt-card__action--ghost font-label-sm"
-              >
-                <span class="material-symbols-outlined">clinical_notes</span> Chart
-              </a>
-              <a
-                routerLink="/consultations"
-                class="pt-card__action pt-card__action--solid font-label-sm"
-              >
-                <span class="material-symbols-outlined">medical_services</span> Consult
-              </a>
+            <div>
+              <h3 class="pt-card__name">
+                Sarah Jenkins
+              </h3>
+              <p class="pt-card__meta font-label-sm">
+                MRN-100003 • 32 yrs
+              </p>
+              <p class="pt-card__condition font-data-tabular">
+                Post-op Review (ACL), Left knee rehab
+              </p>
             </div>
           </div>
-          <div class="pt-card">
-            <div class="pt-card__row">
-              <div class="pt-card__left">
-                <div class="pt-avatar">
-                  MG
-                </div>
-                <div>
-                  <h3 class="pt-card__name">
-                    Maria Garcia
-                  </h3>
-                  <p class="pt-card__meta font-label-sm">
-                    MRN-100006 • 34 yrs
-                  </p>
-                  <p class="pt-card__condition font-data-tabular">
-                    Severe Gastroenteritis, Dehydration
-                  </p>
-                </div>
-              </div>
 
-              <div class="pt-card__right">
-                <span class="pt-badge pt-badge--inpatient font-label-sm">
-                  Inpatient
-                </span>
-                <span class="pt-card__date font-label-sm">2026-07-27</span>
-              </div>
-            </div>
-
-            <!-- Mobile Quick Action Strip inside item -->
-            <div class="pt-card__mobile-actions">
-              <a
-                routerLink="/patients"
-                class="pt-card__action pt-card__action--ghost font-label-sm"
-              >
-                <span class="material-symbols-outlined">clinical_notes</span> Chart
-              </a>
-              <a
-                routerLink="/consultations"
-                class="pt-card__action pt-card__action--solid font-label-sm"
-              >
-                <span class="material-symbols-outlined">medical_services</span> Consult
-              </a>
-            </div>
+          <div class="pt-card__right">
+            <span class="pt-badge pt-badge--recovering font-label-sm">
+              RECOVERING
+            </span>
+            <span class="pt-card__date font-label-sm">2026-07-25</span>
           </div>
-          <div class="pt-card">
-            <div class="pt-card__row">
-              <div class="pt-card__left">
-                <div class="pt-avatar">
-                  SJ
-                </div>
-                <div>
-                  <h3 class="pt-card__name">
-                    Sarah Jenkins
-                  </h3>
-                  <p class="pt-card__meta font-label-sm">
-                    MRN-100003 • 32 yrs
-                  </p>
-                  <p class="pt-card__condition font-data-tabular">
-                    Post-op Review (ACL), Left knee rehab
-                  </p>
-                </div>
-              </div>
+        </div>
 
-              <div class="pt-card__right">
-                <span class="pt-badge pt-badge--recovering font-label-sm">
-                  RECOVERING
-                </span>
-                <span class="pt-card__date font-label-sm">2026-07-25</span>
-              </div>
-            </div>
+        <!-- Mobile Quick Action Strip inside item -->
+        <div class="pt-card__mobile-actions">
+          <a
+            routerLink="/patients"
+            class="pt-card__action pt-card__action--ghost font-label-sm"
+          >
+            <span class="material-symbols-outlined">clinical_notes</span> Chart
+          </a>
+          <a
+            routerLink="/consultations"
+            class="pt-card__action pt-card__action--solid font-label-sm"
+          >
+            <span class="material-symbols-outlined">medical_services</span> Consult
+          </a>
+        </div>
+      </div>
+    </section>
 
-            <!-- Mobile Quick Action Strip inside item -->
-            <div class="pt-card__mobile-actions">
-              <a
-                routerLink="/patients"
-                class="pt-card__action pt-card__action--ghost font-label-sm"
-              >
-                <span class="material-symbols-outlined">clinical_notes</span> Chart
-              </a>
-              <a
-                routerLink="/consultations"
-                class="pt-card__action pt-card__action--solid font-label-sm"
-              >
-                <span class="material-symbols-outlined">medical_services</span> Consult
-              </a>
-            </div>
-          </div>
-            </section>
-
-            <!-- Right Detail Pane - Desktop Bento Grid View -->
-            <section class="pt-detail-pane">
-              <div class="pt-detail-container">
-                <!-- Header Patient Profile Card -->
-                <div class="pt-profile-card">
-                  <div class="pt-profile-card__left">
+    <!-- Right Detail Pane - Desktop Bento Grid View -->
+    <section class="pt-detail-pane">
+      <div class="pt-detail-container">
+        <!-- Header Patient Profile Card -->
+        <div class="pt-profile-card">
+          <div class="pt-profile-card__left">
             <img
               src="https://lh3.googleusercontent.com/aida-public/AB6AXuDYiASAXuB-WgIRUFuA4T3ewJIavDE3-HGK0jhdntbkTVsLpredx4tlBsMeXasVaTrG5TLFanJ8LUfEPXm3see51hVH67rWwhNSD8zbxNkW9FzW9W7bxvHOgyQjG0gZFfIZQ39jDGcgYKdzPVVV_X4Ou5azP71tEtBnVhwDgokoCQCroAKlsxyX9j0Kb5vd75hbkDQExidi8h3hdyPQhOVYq4J_kRUbME0q232y7eMtWGSi9ok-McyFMA"
               alt="Eleanor Vance"
               class="pt-profile-avatar"
             />
-                    <div>
-                      <div class="pt-profile-name-row">
-                        <h2 class="pt-profile-name">
-                          Eleanor Vance
-                        </h2>
-                        <span class="pt-profile-badge font-label-sm">
-                          HIGH RISK
-                        </span>
-                      </div>
-                      <div class="pt-profile-meta-row">
-                        <span class="pt-profile-meta-item font-label-sm">
-                          <span class="material-symbols-outlined pt-profile-meta-icon">badge</span>
-                          MRN-100001
-                        </span>
-                        <span class="pt-profile-meta-item font-label-sm">
-                          <span class="material-symbols-outlined pt-profile-meta-icon">cake</span>
-                          DOB: 12/04/1958 (65y)
-                        </span>
-                        <span class="pt-profile-meta-item font-label-sm">
-                          <span class="material-symbols-outlined pt-profile-meta-icon">bloodtype</span>
-                          O+
-                        </span>
+            <div>
+              <div class="pt-profile-name-row">
+                <h2 class="pt-profile-name">
+                  Eleanor Vance
+                </h2>
+                <span class="pt-profile-badge font-label-sm">
+                  HIGH RISK
+                </span>
+              </div>
+              <div class="pt-profile-meta-row">
+                <span class="pt-profile-meta-item font-label-sm">
+                  <span class="material-symbols-outlined pt-profile-meta-icon">badge</span>
+                  MRN-100001
+                </span>
+                <span class="pt-profile-meta-item font-label-sm">
+                  <span class="material-symbols-outlined pt-profile-meta-icon">cake</span>
+                  DOB: 12/04/1958 (65y)
+                </span>
+                <span class="pt-profile-meta-item font-label-sm">
+                  <span class="material-symbols-outlined pt-profile-meta-icon">bloodtype</span>
+                  O+
+                </span>
                 <span class="pt-profile-allergy font-label-sm">
                   <span class="material-symbols-outlined pt-profile-meta-icon">warning</span>
                   Penicillin Allergy
                 </span>
-                      </div>
-                    </div>
-                  </div>
+              </div>
+            </div>
+          </div>
 
-                  <div class="pt-profile-actions">
-                    <a
-                      routerLink="/consultations"
-                      class="pt-profile-action font-label-sm"
-                    >
-                      <span class="material-symbols-outlined">medical_services</span>
-                      Start Consult
-                    </a>
-                  </div>
+          <div class="pt-profile-actions">
+            <a
+              routerLink="/consultations"
+              class="pt-profile-action font-label-sm"
+            >
+              <span class="material-symbols-outlined">medical_services</span>
+              Start Consult
+            </a>
+          </div>
+        </div>
+
+        <!-- Bento Grid Content -->
+        <div class="pt-bento-grid">
+          <!-- Vitals Column -->
+          <div class="pt-panel pt-panel--vitals">
+            <div class="pt-panel__head">
+              <h3 class="pt-panel__title">Recent Vitals</h3>
+              <span class="pt-panel__timestamp font-label-sm">
+                Today, 09:30
+              </span>
+            </div>
+            <div class="pt-vitals-list">
+              <div class="pt-vital-row">
+                <div>
+                  <p class="pt-vital-label font-label-sm">BP (mmHg)</p>
+                  <p class="pt-vital-value pt-vital-value--error">
+                    145/90
+                  </p>
                 </div>
-
-                <!-- Bento Grid Content -->
-                <div class="pt-bento-grid">
-                  <!-- Vitals Column -->
-                  <div class="pt-panel pt-panel--vitals">
-                    <div class="pt-panel__head">
-                      <h3 class="pt-panel__title">Recent Vitals</h3>
-                      <span class="pt-panel__timestamp font-label-sm">
-                        Today, 09:30
-                      </span>
-                    </div>
-                    <div class="pt-vitals-list">
-                      <div class="pt-vital-row">
-                        <div>
-                          <p class="pt-vital-label font-label-sm">BP (mmHg)</p>
-                          <p class="pt-vital-value pt-vital-value--error">
-                            145/90
-                          </p>
-                        </div>
                 <span class="material-symbols-outlined pt-vital-icon pt-vital-icon--error fill">
                   trending_up
                 </span>
-                      </div>
-                      <div class="pt-vital-bar">
-                        <div class="pt-vital-bar__fill" style="width: 85%"></div>
-                      </div>
+              </div>
+              <div class="pt-vital-bar">
+                <div class="pt-vital-bar__fill" style="width: 85%"></div>
+              </div>
 
-                      <div class="pt-vital-row">
-                        <div>
-                          <p class="pt-vital-label font-label-sm">Heart Rate (bpm)</p>
-                          <p class="pt-vital-value">
-                            82
-                          </p>
-                        </div>
-                        <span class="material-symbols-outlined pt-vital-icon">favorite</span>
-                      </div>
+              <div class="pt-vital-row">
+                <div>
+                  <p class="pt-vital-label font-label-sm">Heart Rate (bpm)</p>
+                  <p class="pt-vital-value">
+                    82
+                  </p>
+                </div>
+                <span class="material-symbols-outlined pt-vital-icon">favorite</span>
+              </div>
 
-                      <div class="pt-vital-row">
-                        <div>
-                          <p class="pt-vital-label font-label-sm">Temp / SpO2</p>
-                          <p class="pt-vital-value pt-vital-value--sm">
-                            98.6 °F • 98%
-                          </p>
-                        </div>
-                      </div>
+              <div class="pt-vital-row">
+                <div>
+                  <p class="pt-vital-label font-label-sm">Temp / SpO2</p>
+                  <p class="pt-vital-value pt-vital-value--sm">
+                    98.6 °F • 98%
+                  </p>
+                </div>
+              </div>
 
               <div class="pt-vital-row">
                 <div>
@@ -623,27 +443,27 @@
                   </p>
                 </div>
               </div>
-                    </div>
-                  </div>
+            </div>
+          </div>
 
-                  <!-- Active Conditions & Meds (Span 2) -->
-                  <div class="pt-panel pt-panel--clinical">
-                    <div class="pt-panel__head">
-                      <h3 class="pt-panel__title">Clinical Overview</h3>
-                      <a
-                        routerLink="/reports"
-                        class="pt-panel__link font-label-sm"
-                      >
-                        View Lab Reports <span class="material-symbols-outlined">arrow_forward</span>
-                      </a>
-                    </div>
-                    <div class="pt-clinical-grid">
-                      <!-- Active Problems -->
-                      <div>
-                        <h4 class="pt-section-label font-label-sm">
-                          Active Problems
-                        </h4>
-                        <ul class="pt-problem-list">
+          <!-- Active Conditions & Meds (Span 2) -->
+          <div class="pt-panel pt-panel--clinical">
+            <div class="pt-panel__head">
+              <h3 class="pt-panel__title">Clinical Overview</h3>
+              <a
+                routerLink="/reports"
+                class="pt-panel__link font-label-sm"
+              >
+                View Lab Reports <span class="material-symbols-outlined">arrow_forward</span>
+              </a>
+            </div>
+            <div class="pt-clinical-grid">
+              <!-- Active Problems -->
+              <div>
+                <h4 class="pt-section-label font-label-sm">
+                  Active Problems
+                </h4>
+                <ul class="pt-problem-list">
                   <li class="pt-problem-item">
                     <span class="pt-problem-dot pt-problem-dot--error"></span>
                     <span class="pt-problem-text">Essential Hypertension (Primary)</span>
@@ -656,15 +476,15 @@
                     <span class="pt-problem-dot pt-problem-dot--outline"></span>
                     <span class="pt-problem-text">Osteoarthritis (Knee)</span>
                   </li>
-                        </ul>
-                      </div>
+                </ul>
+              </div>
 
-                      <!-- Medications -->
-                      <div>
-                        <h4 class="pt-section-label font-label-sm">
-                          Current Medications
-                        </h4>
-                        <ul class="pt-med-list">
+              <!-- Medications -->
+              <div>
+                <h4 class="pt-section-label font-label-sm">
+                  Current Medications
+                </h4>
+                <ul class="pt-med-list">
                   <li class="pt-med-item">
                     <div>
                       <p class="pt-med-name">Lisinopril</p>
@@ -683,9 +503,9 @@
                     </div>
                     <span class="material-symbols-outlined pt-med-icon">pill</span>
                   </li>
-                        </ul>
-                      </div>
-                    </div>
+                </ul>
+              </div>
+            </div>
 
             <!-- Chief Complaint / Notes -->
             <div class="pt-notes">
@@ -696,59 +516,9 @@
                 "Persistent headache, high BP reading at home"
               </p>
             </div>
-                  </div>
-                </div>
-              </div>
-            </section>
           </div>
         </div>
-      </main>
-    </div>
-
-  <nav class="app-mobile-nav">
-    <!-- Home / Dashboard -->
-    <a
-      routerLink="/dashboard"
-      class="app-mobile-nav__link"
-    >
-      <span class="material-symbols-outlined app-mobile-nav__icon">
-        home
-      </span>
-      <span class="app-mobile-nav__label font-label-sm">Home</span>
-    </a>
-
-    <!-- Patients -->
-    <a
-      routerLink="/patients"
-      class="app-mobile-nav__link app-mobile-nav__link--active"
-    >
-      <span class="material-symbols-outlined app-mobile-nav__icon fill">
-        person_search
-      </span>
-      <span class="app-mobile-nav__label font-label-sm">Patients</span>
-    </a>
-
-    <!-- Add / Consultations -->
-    <a
-      routerLink="/consultations"
-      class="app-mobile-nav__fab"
-      aria-label="Add Consultation"
-    >
-      <span class="material-symbols-outlined app-mobile-nav__fab-icon fill">
-        add_circle
-      </span>
-      <span class="app-sr-only">Add Consultation</span>
-    </a>
-
-    <!-- Reports -->
-    <a
-      routerLink="/reports"
-      class="app-mobile-nav__link"
-    >
-      <span class="material-symbols-outlined app-mobile-nav__icon">
-        analytics
-      </span>
-      <span class="app-mobile-nav__label font-label-sm">Reports</span>
-    </a>
-  </nav>
+      </div>
+    </section>
+  </div>
 </div>

@@ -1,0 +1,86 @@
+<aside class="app-sidebar class1">
+  <div class="app-sidebar__inner">
+    <!-- Mobile Close Button -->
+    <div class="app-sidebar__mobile-head">
+      <span class="app-sidebar__mobile-title font-headline-md">healthos-ai Navigation</span>
+      <button class="app-sidebar__close">
+        <span class="material-symbols-outlined">close</span>
+      </button>
+    </div>
+
+    <!-- Practitioner Profile Header -->
+    <div class="app-sidebar__profile">
+      <div class="app-sidebar__profile-row">
+        <img
+          src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTyOI8Qm5FrsN5y88waJmIP-AF9pzqnPHCwC9OTgJ81T0MibdAbYr0Bq5pmnhfWeRbqxYFCFLmbBd-RYFnDuVOpC-YZ-3ENuOHjdpFe65NYIF7madviOT7DGzvoiFLfA_7vRFjiMen37TFpNqGEfj4_X2ptr0D6xK_TUJd5jF3Md_S9VMJTscTUXfQVP_5_PsIaUzFiHRnber9IfePWNs4uK7zMVB5PRFxejIO9_tqPwc9MVFo6rt_gQ"
+          alt="Dr. Reed"
+          class="app-sidebar__avatar"
+        />
+        <div class="app-sidebar__profile-info">
+          <h2 class="app-sidebar__profile-name font-headline-md">
+            Dr. Reed
+          </h2>
+          <p class="app-sidebar__profile-role font-label-sm">Lead Practitioner</p>
+          <p class="app-sidebar__profile-id font-label-sm">
+            Medical ID: 884-2103
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Nav Items -->
+    <nav class="app-sidebar__nav">
+      <a
+        routerLink="/dashboard"
+        routerLinkActive="app-sidebar__link--active"
+        class="app-sidebar__link font-label-sm"
+      >
+        <span class="material-symbols-outlined app-sidebar__link-icon">
+          dashboard
+        </span>
+        <span>Dashboard</span>
+      </a>
+      <a
+        routerLink="/patients"
+        routerLinkActive="app-sidebar__link--active"
+        class="app-sidebar__link font-label-sm"
+      >
+        <span class="material-symbols-outlined app-sidebar__link-icon">
+          group
+        </span>
+        <span>Patients</span>
+      </a>
+      <a
+        routerLink="/consultations"
+        routerLinkActive="app-sidebar__link--active"
+        class="app-sidebar__link font-label-sm"
+      >
+        <span class="material-symbols-outlined app-sidebar__link-icon">
+          medical_services
+        </span>
+        <span>Consultations</span>
+      </a>
+      <a
+        routerLink="/reports"
+        routerLinkActive="app-sidebar__link--active"
+        class="app-sidebar__link font-label-sm"
+      >
+        <span class="material-symbols-outlined app-sidebar__link-icon">
+          description
+        </span>
+        <span>Reports</span>
+      </a>
+    </nav>
+
+    <!-- Sign Out Section -->
+    <div class="app-sidebar__signout">
+      <a
+        routerLink="/login"
+        class="app-sidebar__signout-link font-label-sm"
+      >
+        <span class="material-symbols-outlined">logout</span>
+        <span>Sign Out</span>
+      </a>
+    </div>
+  </div>
+</aside>

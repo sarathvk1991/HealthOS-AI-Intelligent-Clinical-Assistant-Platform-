@@ -1,294 +1,130 @@
-<div class="app-body font-body-md">
-  <header class="app-header">
-    <div class="app-header__left">
-      <button aria-label="Menu" class="app-icon-btn">
-        <span class="material-symbols-outlined">menu</span>
-      </button>
-
-      <a class="app-logo" routerLink="/dashboard">
-        <span class="material-symbols-outlined app-logo__icon fill">
-          health_and_safety
-        </span>
-        <span class="app-logo__text font-headline-md">
-          HealthOS <span class="app-logo__text-sub">AI</span>
-        </span>
-      </a>
-
-      <h1 class="app-header__title">
-        Medical Report View: Lab Results
-      </h1>
-    </div>
-
-    <!-- Right Top Nav & Action Buttons -->
-    <div class="app-header__right">
-      <!-- Top Nav Links for Desktop -->
-      <nav class="app-header__nav">
-      <a
-        routerLink="/dashboard"
-        class="app-header__nav-link"
-      >
-        Dashboard
-      </a>
-      <a
-        routerLink="/patients"
-        class="app-header__nav-link"
-      >
-        Patients
-      </a>
-      <a
-        routerLink="/consultations"
-        class="app-header__nav-link"
-      >
-        Consultations
-      </a>
-      <a
-        routerLink="/reports"
-        class="app-header__nav-link app-header__nav-link--active"
-      >
-        Reports
-      </a>
-      </nav>
-
-      <!-- Notifications Icon (closed by default) -->
-      <div class="app-header__notif">
-        <button
-          class="app-icon-btn"
-          aria-label="Notifications"
-        >
-          <span class="material-symbols-outlined">notifications</span>
-          <span class="app-header__notif-dot"></span>
-        </button>
+<div class="rp-page">
+  <div class="rp-container">
+    <!-- Header Title & Selector -->
+    <div class="rp-head-row">
+      <div>
+        <h1 class="rp-title">
+          Medical Report View: Lab Results
+        </h1>
+        <p class="rp-subtitle font-body-md">
+          Comprehensive Metabolic & Lipid Diagnostic Panel
+        </p>
       </div>
 
-      <!-- View Full AI Summary Action Button -->
-      <button type="button" class="app-btn-ai">
-        <span class="material-symbols-outlined fill">
-          auto_awesome
-        </span>
-        <span class="app-hide-mobile">View Full AI Summary</span>
-        <span class="app-show-mobile">AI</span>
-      </button>
-
-      <!-- New Patient Button -->
-      <button type="button" class="app-btn-primary">
-        <span class="material-symbols-outlined">add</span>
-        <span class="app-hide-mobile">New Patient</span>
-      </button>
+      <div class="rp-selector">
+        <label class="rp-selector-label font-label-sm" for="patient-select">Select Patient:</label>
+        <select id="patient-select" class="rp-select font-label-sm">
+          <option value="P10001" selected>Eleanor Vance (MRN-100001)</option>
+          <option value="P10002">Jameson Locke (MRN-100002)</option>
+          <option value="P10003">Sarah Jenkins (MRN-100003)</option>
+          <option value="P10004">John Doe (MRN-100004)</option>
+          <option value="P10005">Anna Smith (MRN-100005)</option>
+          <option value="P10006">Maria Garcia (MRN-100006)</option>
+          <option value="P10007">Jane Doe (MRN-100007)</option>
+        </select>
+      </div>
     </div>
-  </header>
 
-    <div class="app-body-layout">
-    <aside class="app-sidebar">
-      <div class="app-sidebar__inner">
-        <!-- Mobile Close Button -->
-        <div class="app-sidebar__mobile-head">
-          <span class="app-sidebar__mobile-title font-headline-md">healthos-ai Navigation</span>
-          <button class="app-sidebar__close">
-            <span class="material-symbols-outlined">close</span>
-          </button>
+    <!-- Patient Context Bar -->
+    <div class="rp-context-bar">
+      <div class="rp-context-left">
+        <div class="rp-context-avatar">
+          EV
         </div>
+        <div>
+          <h2 class="rp-context-name">
+            Eleanor Vance
+          </h2>
+          <p class="rp-context-meta font-body-md">
+            DOB: 12/04/1958 (65 Yrs) • Female
+          </p>
+        </div>
+      </div>
 
-        <!-- Practitioner Profile Header -->
-        <div class="app-sidebar__profile">
-          <div class="app-sidebar__profile-row">
-            <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTyOI8Qm5FrsN5y88waJmIP-AF9pzqnPHCwC9OTgJ81T0MibdAbYr0Bq5pmnhfWeRbqxYFCFLmbBd-RYFnDuVOpC-YZ-3ENuOHjdpFe65NYIF7madviOT7DGzvoiFLfA_7vRFjiMen37TFpNqGEfj4_X2ptr0D6xK_TUJd5jF3Md_S9VMJTscTUXfQVP_5_PsIaUzFiHRnber9IfePWNs4uK7zMVB5PRFxejIO9_tqPwc9MVFo6rt_gQ"
-              alt="Dr. Reed"
-              class="app-sidebar__avatar"
-            />
-            <div class="app-sidebar__profile-info">
-              <h2 class="app-sidebar__profile-name font-headline-md">
-                Dr. Reed
-              </h2>
-              <p class="app-sidebar__profile-role font-label-sm">Lead Practitioner</p>
-              <p class="app-sidebar__profile-id font-label-sm">
-                Medical ID: 884-2103
+      <div class="rp-context-tags">
+        <span class="rp-context-tag font-label-sm">
+          Order: #ORD-9921-A
+        </span>
+        <span class="rp-context-tag font-label-sm">
+          Drawn: Oct 24, 08:15 AM
+        </span>
+      </div>
+    </div>
+
+    <!-- Bento Grid Layout -->
+    <div class="rp-grid">
+      <!-- Left Column: AI Summary & Plan -->
+      <div class="rp-col rp-col--left">
+        <!-- AI Summary Card -->
+        <div class="rp-summary-card">
+          <div class="rp-summary-glow"></div>
+          <div class="rp-summary-head">
+            <span class="material-symbols-outlined fill">
+              auto_awesome
+            </span>
+            <h3 class="rp-summary-title">AI Clinical Summary</h3>
+          </div>
+          <div class="rp-summary-body">
+            <p class="rp-summary-text font-body-md">Patient exhibits marked elevation in HbA1c (8.4%) indicating poor glycemic control over the past 3 months. Concurrent mild hyperlipidemia noted (LDL 135 mg/dL). Renal function remains stable (eGFR > 60). No acute inflammatory markers detected.</p>
+            <div class="rp-summary-flag">
+              <p class="rp-summary-flag-text font-label-sm">
+                <span class="material-symbols-outlined rp-summary-flag-icon">
+                  warning
+                </span>
+                <span>
+                  <strong>Flagged:</strong> Risk of diabetic nephropathy progression. Recommend re-evaluation of current metformin dosage.
+                </span>
               </p>
             </div>
           </div>
         </div>
 
-        <!-- Nav Items -->
-        <nav class="app-sidebar__nav">
-        <a
-          routerLink="/dashboard"
-          class="app-sidebar__link font-label-sm"
-        >
-          <span class="material-symbols-outlined app-sidebar__link-icon">
-            dashboard
-          </span>
-          <span>Dashboard</span>
-        </a>
-        <a
-          routerLink="/patients"
-          class="app-sidebar__link font-label-sm"
-        >
-          <span class="material-symbols-outlined app-sidebar__link-icon">
-            group
-          </span>
-          <span>Patients</span>
-        </a>
-        <a
-          routerLink="/consultations"
-          class="app-sidebar__link font-label-sm"
-        >
-          <span class="material-symbols-outlined app-sidebar__link-icon">
-            medical_services
-          </span>
-          <span>Consultations</span>
-        </a>
-        <a
-          routerLink="/reports"
-          class="app-sidebar__link app-sidebar__link--active font-label-sm"
-        >
-          <span class="material-symbols-outlined app-sidebar__link-icon--active fill">
-            description
-          </span>
-          <span>Reports</span>
-        </a>
-        </nav>
-
-        <!-- Sign Out Section -->
-        <div class="app-sidebar__signout">
-          <a
-            routerLink="/login"
-            class="app-sidebar__signout-link font-label-sm"
-          >
-            <span class="material-symbols-outlined">logout</span>
-            <span>Sign Out</span>
-          </a>
+        <!-- Provider Plan / Notes -->
+        <div class="rp-plan-card">
+          <div class="rp-plan-head">
+            <h3 class="rp-plan-title">
+              Provider Plan
+            </h3>
+            <span class="material-symbols-outlined">edit</span>
+          </div>
+          <div class="rp-plan-body">
+            <textarea
+              class="rp-plan-textarea"
+              placeholder="Enter clinical plan, medication adjustments, or referral notes...">Adjust Metformin to 1000mg BID. Order follow-up HbA1c in 12 weeks. Encourage low-potassium dietary balance and hydration.</textarea>
+            <div class="rp-plan-footer">
+              <span class="font-label-sm">
+              </span>
+              <button type="button" class="rp-plan-save">
+                Save Plan
+              </button>
+            </div>
+          </div>
         </div>
       </div>
-    </aside>
 
-      <main class="app-main">
-        <div class="rp-page">
-          <div class="rp-container">
-            <!-- Header Title & Selector -->
-            <div class="rp-head-row">
-              <div>
-                <h1 class="rp-title">
-                  Medical Report View: Lab Results
-                </h1>
-                <p class="rp-subtitle font-body-md">
-                  Comprehensive Metabolic & Lipid Diagnostic Panel
-                </p>
-              </div>
-
-              <div class="rp-selector">
-                <label class="rp-selector-label font-label-sm" for="patient-select">Select Patient:</label>
-                <select id="patient-select" class="rp-select font-label-sm">
-            <option value="P10001" selected>Eleanor Vance (MRN-100001)</option>
-            <option value="P10002">Jameson Locke (MRN-100002)</option>
-            <option value="P10003">Sarah Jenkins (MRN-100003)</option>
-            <option value="P10004">John Doe (MRN-100004)</option>
-            <option value="P10005">Anna Smith (MRN-100005)</option>
-            <option value="P10006">Maria Garcia (MRN-100006)</option>
-            <option value="P10007">Jane Doe (MRN-100007)</option>
-                </select>
-              </div>
-            </div>
-
-            <!-- Patient Context Bar -->
-            <div class="rp-context-bar">
-              <div class="rp-context-left">
-                <div class="rp-context-avatar">
-                  EV
-                </div>
-                <div>
-                  <h2 class="rp-context-name">
-                    Eleanor Vance
-                  </h2>
-                  <p class="rp-context-meta font-body-md">
-                    DOB: 12/04/1958 (65 Yrs) • Female
-                  </p>
-                </div>
-              </div>
-
-              <div class="rp-context-tags">
-                <span class="rp-context-tag font-label-sm">
-                  Order: #ORD-9921-A
-                </span>
-                <span class="rp-context-tag font-label-sm">
-                  Drawn: Oct 24, 08:15 AM
-                </span>
-              </div>
-            </div>
-
-            <!-- Bento Grid Layout -->
-            <div class="rp-grid">
-              <!-- Left Column: AI Summary & Plan -->
-              <div class="rp-col rp-col--left">
-                <!-- AI Summary Card -->
-                <div class="rp-summary-card">
-                  <div class="rp-summary-glow"></div>
-                  <div class="rp-summary-head">
-                    <span class="material-symbols-outlined fill">
-                      auto_awesome
-                    </span>
-                    <h3 class="rp-summary-title">AI Clinical Summary</h3>
-                  </div>
-                  <div class="rp-summary-body">
-                    <p class="rp-summary-text font-body-md">Patient exhibits marked elevation in HbA1c (8.4%) indicating poor glycemic control over the past 3 months. Concurrent mild hyperlipidemia noted (LDL 135 mg/dL). Renal function remains stable (eGFR > 60). No acute inflammatory markers detected.</p>
-                    <div class="rp-summary-flag">
-                      <p class="rp-summary-flag-text font-label-sm">
-                        <span class="material-symbols-outlined rp-summary-flag-icon">
-                          warning
-                        </span>
-                        <span>
-                          <strong>Flagged:</strong> Risk of diabetic nephropathy progression. Recommend re-evaluation of current metformin dosage.
-                        </span>
-                      </p>
-                    </div>
-                  </div>
-                </div>
-
-                <!-- Provider Plan / Notes -->
-                <div class="rp-plan-card">
-                  <div class="rp-plan-head">
-                    <h3 class="rp-plan-title">
-                      Provider Plan
-                    </h3>
-                    <span class="material-symbols-outlined">edit</span>
-                  </div>
-                  <div class="rp-plan-body">
-                    <textarea
-                      class="rp-plan-textarea"
-                      placeholder="Enter clinical plan, medication adjustments, or referral notes...">Adjust Metformin to 1000mg BID. Order follow-up HbA1c in 12 weeks. Encourage low-potassium dietary balance and hydration.</textarea>
-                    <div class="rp-plan-footer">
-                      <span class="font-label-sm">
-                      </span>
-                      <button type="button" class="rp-plan-save">
-                        Save Plan
-                      </button>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Right Column: Data Tables -->
-              <div class="rp-col rp-col--right">
-                <!-- CMP Table -->
-                <div class="rp-table-card">
-                  <div class="rp-table-head">
-                    <h3 class="rp-table-title">
-                      Comprehensive Metabolic Panel (CMP)
-                    </h3>
-                    <span class="rp-table-tag font-label-sm">Fasting</span>
-                  </div>
-                  <div class="rp-table-scroll">
-                    <table class="rp-table">
-                      <thead class="rp-table__head">
-                        <tr>
-                          <th class="rp-table__th">Test</th>
-                          <th class="rp-table__th rp-table__th--right">Result</th>
-                          <th class="rp-table__th rp-table__th--center">Flag</th>
-                          <th class="rp-table__th">Ref. Range</th>
-                          <th class="rp-table__th rp-table__th--sm-only">Units</th>
-                          <th class="rp-table__th rp-table__th--md-only">12M Trend</th>
-                        </tr>
-                      </thead>
-                      <tbody>
+      <!-- Right Column: Data Tables -->
+      <div class="rp-col rp-col--right">
+        <!-- CMP Table -->
+        <div class="rp-table-card">
+          <div class="rp-table-head">
+            <h3 class="rp-table-title">
+              Comprehensive Metabolic Panel (CMP)
+            </h3>
+            <span class="rp-table-tag font-label-sm">Fasting</span>
+          </div>
+          <div class="rp-table-scroll">
+            <table class="rp-table">
+              <thead class="rp-table__head">
+                <tr>
+                  <th class="rp-table__th">Test</th>
+                  <th class="rp-table__th rp-table__th--right">Result</th>
+                  <th class="rp-table__th rp-table__th--center">Flag</th>
+                  <th class="rp-table__th">Ref. Range</th>
+                  <th class="rp-table__th rp-table__th--sm-only">Units</th>
+                  <th class="rp-table__th rp-table__th--md-only">12M Trend</th>
+                </tr>
+              </thead>
+              <tbody>
                 <tr class="rp-table__row">
                   <td class="rp-table__td">Glucose</td>
                   <td class="rp-table__td rp-table__td--right rp-table__td--error">
@@ -394,31 +230,31 @@
                     </svg>
                   </td>
                 </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
+              </tbody>
+            </table>
+          </div>
+        </div>
 
-                <!-- Lipid Panel Table -->
-                <div class="rp-table-card">
-                  <div class="rp-table-head">
-                    <h3 class="rp-table-title">
-                      Lipid Panel
-                    </h3>
-                    <span class="rp-table-tag font-label-sm">Fasting</span>
-                  </div>
-                  <div class="rp-table-scroll">
-                    <table class="rp-table">
-                      <thead class="rp-table__head">
-                        <tr>
-                          <th class="rp-table__th">Test</th>
-                          <th class="rp-table__th rp-table__th--right">Result</th>
-                          <th class="rp-table__th rp-table__th--center">Flag</th>
-                          <th class="rp-table__th">Ref. Range</th>
-                          <th class="rp-table__th rp-table__th--sm-only">Units</th>
-                        </tr>
-                      </thead>
-                      <tbody>
+        <!-- Lipid Panel Table -->
+        <div class="rp-table-card">
+          <div class="rp-table-head">
+            <h3 class="rp-table-title">
+              Lipid Panel
+            </h3>
+            <span class="rp-table-tag font-label-sm">Fasting</span>
+          </div>
+          <div class="rp-table-scroll">
+            <table class="rp-table">
+              <thead class="rp-table__head">
+                <tr>
+                  <th class="rp-table__th">Test</th>
+                  <th class="rp-table__th rp-table__th--right">Result</th>
+                  <th class="rp-table__th rp-table__th--center">Flag</th>
+                  <th class="rp-table__th">Ref. Range</th>
+                  <th class="rp-table__th rp-table__th--sm-only">Units</th>
+                </tr>
+              </thead>
+              <tbody>
                 <tr class="rp-table__row">
                   <td class="rp-table__td">Cholesterol, Total</td>
                   <td class="rp-table__td rp-table__td--right rp-table__td--error">
@@ -463,61 +299,11 @@
                   <td class="rp-table__td rp-table__td--dim">&lt; 100</td>
                   <td class="rp-table__td rp-table__td--muted rp-table__td--sm-only">mg/dL</td>
                 </tr>
-                      </tbody>
-                    </table>
-                  </div>
-                </div>
-              </div>
-            </div>
+              </tbody>
+            </table>
           </div>
         </div>
-      </main>
+      </div>
     </div>
-
-  <nav class="app-mobile-nav">
-    <!-- Home / Dashboard -->
-    <a
-      routerLink="/dashboard"
-      class="app-mobile-nav__link"
-    >
-      <span class="material-symbols-outlined app-mobile-nav__icon">
-        home
-      </span>
-      <span class="app-mobile-nav__label font-label-sm">Home</span>
-    </a>
-
-    <!-- Patients -->
-    <a
-      routerLink="/patients"
-      class="app-mobile-nav__link"
-    >
-      <span class="material-symbols-outlined app-mobile-nav__icon">
-        person_search
-      </span>
-      <span class="app-mobile-nav__label font-label-sm">Patients</span>
-    </a>
-
-    <!-- Add / Consultations -->
-    <a
-      routerLink="/consultations"
-      class="app-mobile-nav__fab"
-      aria-label="Add Consultation"
-    >
-      <span class="material-symbols-outlined app-mobile-nav__fab-icon fill">
-        add_circle
-      </span>
-      <span class="app-sr-only">Add Consultation</span>
-    </a>
-
-    <!-- Reports -->
-    <a
-      routerLink="/reports"
-      class="app-mobile-nav__link app-mobile-nav__link--active"
-    >
-      <span class="material-symbols-outlined app-mobile-nav__icon fill">
-        analytics
-      </span>
-      <span class="app-mobile-nav__label font-label-sm">Reports</span>
-    </a>
-  </nav>
+  </div>
 </div>

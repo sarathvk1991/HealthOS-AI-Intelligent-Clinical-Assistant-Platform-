@@ -1,476 +1,247 @@
-<div class="app-body font-body-md">
-  <header class="app-header">
-    <div class="app-header__left">
-      <button aria-label="Menu" class="app-icon-btn">
-        <span class="material-symbols-outlined">menu</span>
-      </button>
-
-      <a class="app-logo" routerLink="/dashboard">
-        <span class="material-symbols-outlined app-logo__icon fill">
-          health_and_safety
-        </span>
-        <span class="app-logo__text font-headline-md">
-          HealthOS <span class="app-logo__text-sub">AI</span>
-        </span>
-      </a>
-
-      <h1 class="app-header__title">
-        Consultation Workspace
-      </h1>
-    </div>
-
-  <!-- Center Search Input for Patient & Reports screens -->
-  <div class="app-header__search">
-    <div class="app-header__search-inner">
-      <span class="material-symbols-outlined app-header__search-icon">
-        search
-      </span>
-      <input
-        type="text"
-        value=""
-        placeholder="Search patients by name, ID, or condition..."
-        class="app-header__search-input"
-      />
-    </div>
-  </div>
-
-    <!-- Right Top Nav & Action Buttons -->
-    <div class="app-header__right">
-      <!-- Top Nav Links for Desktop -->
-      <nav class="app-header__nav">
+<div class="cs-page">
+  <!-- Top Session Header -->
+  <div class="cs-session-bar">
+    <div class="cs-session-bar__left">
       <a
-        routerLink="/dashboard"
-        class="app-header__nav-link"
+        routerLink="/patients"
+        class="cs-back-btn"
+        title="Back to Patients"
       >
-        Dashboard
+        <span class="material-symbols-outlined">arrow_back</span>
+      </a>
+      <div>
+        <div class="cs-session-title-row">
+          <h1 class="cs-session-title">
+            Consultation View: Eleanor Vance
+          </h1>
+          <span class="cs-session-badge font-label-sm">
+            Active Session
+          </span>
+        </div>
+        <p class="cs-session-meta font-label-sm">
+          MRN-100001 • Age 65 • Assigned: Dr. Reed
+        </p>
+      </div>
+    </div>
+
+    <div class="cs-session-actions">
+      <a
+        routerLink="/patients"
+        class="cs-session-btn cs-session-btn--ghost font-label-sm"
+      >
+        Save Draft
       </a>
       <a
         routerLink="/patients"
-        class="app-header__nav-link"
+        class="cs-session-btn cs-session-btn--solid font-label-sm"
       >
-        Patients
+        Finalize Record
       </a>
-      <a
-        routerLink="/consultations"
-        class="app-header__nav-link app-header__nav-link--active"
-      >
-        Consultations
-      </a>
-      <a
-        routerLink="/reports"
-        class="app-header__nav-link"
-      >
-        Reports
-      </a>
-      </nav>
+    </div>
+  </div>
 
-      <!-- Notifications Icon (closed by default) -->
-      <div class="app-header__notif">
-        <button
-          class="app-icon-btn"
-          aria-label="Notifications"
-        >
-          <span class="material-symbols-outlined">notifications</span>
-          <span class="app-header__notif-dot"></span>
-        </button>
+  <!-- Main Workspace Body -->
+  <div class="cs-workspace">
+    <div class="cs-workspace__grid">
+      <!-- Left Column: Voice Dictation & Patient Intake -->
+      <div class="cs-col cs-col--left">
+        <!-- Live Dictation Card -->
+        <div class="cs-dictation-card">
+          <div class="cs-dictation-head">
+            <h2 class="cs-dictation-title">
+              <span class="material-symbols-outlined">mic</span>
+              Live Dictation
+            </h2>
+            <div class="cs-dictation-status">
+              <span class="cs-dictation-status-dot"></span>
+              <span class="cs-dictation-status-label font-label-sm">
+                Idle
+              </span>
+            </div>
+          </div>
+
+          <!-- Live Audio Transcript Box -->
+          <div class="cs-transcript-box">
+            <p class="cs-transcript-text font-body-md">
+              Persistent headache, high BP reading at home
+            </p>
+          </div>
+
+          <!-- Control Buttons -->
+          <div class="cs-dictation-controls">
+            <button type="button" class="cs-dictation-btn cs-dictation-btn--ghost font-label-sm">
+              <span class="material-symbols-outlined">
+                mic
+              </span>
+              Start Mic
+            </button>
+
+            <button type="button" class="cs-dictation-btn cs-dictation-btn--solid font-label-sm">
+              <span class="material-symbols-outlined fill">
+                auto_awesome
+              </span>
+              Generate SOAP
+            </button>
+          </div>
+        </div>
+
+        <!-- Patient Intake Card -->
+        <div class="cs-intake-card">
+          <div class="cs-intake-head">
+            <h3 class="cs-intake-title">Patient Intake</h3>
+            <span class="cs-intake-mrn font-label-sm">MRN MRN-100001</span>
+          </div>
+          <div class="cs-intake-body">
+            <div>
+              <label class="cs-field-label font-label-sm">
+                Chief Complaint
+              </label>
+              <p class="cs-field-value font-body-md">
+                Persistent headache, high BP reading at home
+              </p>
+            </div>
+
+            <div>
+              <label class="cs-field-label font-label-sm">
+                Current Vitals
+              </label>
+              <div class="cs-vitals-grid font-data-tabular">
+                <div class="cs-vitals-cell">
+                  <span class="cs-vitals-cell-label font-label-sm">BP</span>
+                  <span class="cs-vitals-cell-value">145/90</span>
+                </div>
+                <div class="cs-vitals-cell">
+                  <span class="cs-vitals-cell-label font-label-sm">Pulse</span>
+                  <span class="cs-vitals-cell-value">82 bpm</span>
+                </div>
+                <div class="cs-vitals-cell">
+                  <span class="cs-vitals-cell-label font-label-sm">Temp</span>
+                  <span class="cs-vitals-cell-value">98.6 °F</span>
+                </div>
+                <div class="cs-vitals-cell">
+                  <span class="cs-vitals-cell-label font-label-sm">SpO2</span>
+                  <span class="cs-vitals-cell-value">98%</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <!-- View Full AI Summary Action Button -->
-      <button type="button" class="app-btn-ai">
-        <span class="material-symbols-outlined fill">
-          auto_awesome
-        </span>
-        <span class="app-hide-mobile">View Full AI Summary</span>
-        <span class="app-show-mobile">AI</span>
-      </button>
+      <!-- Middle Column: SOAP Form -->
+      <div class="cs-col cs-col--middle">
+        <div class="cs-soap-card">
+          <div class="cs-soap-head">
+            <h2 class="cs-soap-title">
+              <span class="material-symbols-outlined">edit_document</span>
+              Consultation Notes (SOAP)
+            </h2>
+            <span class="cs-soap-timestamp font-label-sm">Just now</span>
+          </div>
 
-      <!-- New Patient Button -->
-      <button type="button" class="app-btn-primary">
-        <span class="material-symbols-outlined">add</span>
-        <span class="app-hide-mobile">New Patient</span>
-      </button>
-    </div>
-  </header>
+          <div class="cs-soap-body">
+            <!-- Subjective -->
+            <div class="cs-soap-section">
+              <div class="cs-soap-section-label font-label-sm">
+                [S] Subjective
+              </div>
+              <textarea
+                class="cs-soap-textarea font-body-md"
+                placeholder="Patient's reported symptoms...">Fever, sore throat and fatigue for three days.</textarea>
+            </div>
 
-    <div class="app-body-layout">
-    <aside class="app-sidebar">
-      <div class="app-sidebar__inner">
-        <!-- Mobile Close Button -->
-        <div class="app-sidebar__mobile-head">
-          <span class="app-sidebar__mobile-title font-headline-md">healthos-ai Navigation</span>
-          <button class="app-sidebar__close">
-            <span class="material-symbols-outlined">close</span>
+            <!-- Objective -->
+            <div class="cs-soap-section">
+              <div class="cs-soap-section-label font-label-sm">
+                [O] Objective
+              </div>
+              <textarea
+                class="cs-soap-textarea font-body-md"
+                placeholder="Clinical observations and exam findings...">Temperature 98.6 °F. Mild throat congestion. Pulse 82 bpm. BP 145/90.</textarea>
+            </div>
+
+            <!-- Assessment -->
+            <div class="cs-soap-section">
+              <div class="cs-soap-section-label font-label-sm">
+                [A] Assessment
+              </div>
+              <textarea
+                class="cs-soap-textarea cs-soap-textarea--sm font-body-md"
+                placeholder="Medical diagnosis and clinical reasoning...">Essential Hypertension (Primary)</textarea>
+            </div>
+
+            <!-- Plan -->
+            <div class="cs-soap-section">
+              <div class="cs-soap-section-label font-label-sm">
+                [P] Plan
+              </div>
+              <textarea
+                class="cs-soap-textarea font-body-md"
+                placeholder="Treatment plan, prescriptions, follow-up...">Paracetamol 500mg q6h, hydration, warm saline gargles and follow-up in 3 days.</textarea>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- Right Column: AI Assistant & Rx Orders -->
+      <div class="cs-col cs-col--right">
+        <!-- AI Assistant Module -->
+        <div class="cs-ai-card ai-glow">
+          <div class="cs-ai-head">
+            <span class="cs-ai-title">
+              <span class="material-symbols-outlined fill">
+                smart_toy
+              </span>
+              Clinical AI Assistant
+            </span>
+            <span class="cs-ai-badge">
+              AI
+            </span>
+          </div>
+          <p class="cs-ai-text font-body-md">
+            Based on complaints of Persistent headache, high BP reading at home, consider evaluating for viral etiology. Recommended monitoring for dehydration and temperature spike.
+          </p>
+          <button type="button" class="cs-ai-action font-label-sm">
+            <span class="material-symbols-outlined">add</span> Add to Assessment
           </button>
         </div>
 
-        <!-- Practitioner Profile Header -->
-        <div class="app-sidebar__profile">
-          <div class="app-sidebar__profile-row">
-            <img
-              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTyOI8Qm5FrsN5y88waJmIP-AF9pzqnPHCwC9OTgJ81T0MibdAbYr0Bq5pmnhfWeRbqxYFCFLmbBd-RYFnDuVOpC-YZ-3ENuOHjdpFe65NYIF7madviOT7DGzvoiFLfA_7vRFjiMen37TFpNqGEfj4_X2ptr0D6xK_TUJd5jF3Md_S9VMJTscTUXfQVP_5_PsIaUzFiHRnber9IfePWNs4uK7zMVB5PRFxejIO9_tqPwc9MVFo6rt_gQ"
-              alt="Dr. Reed"
-              class="app-sidebar__avatar"
-            />
-            <div class="app-sidebar__profile-info">
-              <h2 class="app-sidebar__profile-name font-headline-md">
-                Dr. Reed
-              </h2>
-              <p class="app-sidebar__profile-role font-label-sm">Lead Practitioner</p>
-              <p class="app-sidebar__profile-id font-label-sm">
-                Medical ID: 884-2103
-              </p>
+        <!-- Prescriptions & Orders Module -->
+        <div class="cs-rx-card">
+          <h3 class="cs-rx-title">
+            <span class="material-symbols-outlined">medication</span>
+            Prescription & Orders
+          </h3>
+
+          <!-- Med List -->
+          <div class="cs-rx-list">
+            <div class="cs-rx-item">
+              <p class="cs-rx-name">Paracetamol - 500mg</p>
+              <p class="cs-rx-detail">Take 1 tablet every 6 hours PRN for fever</p>
+              <div class="cs-rx-status">
+                <span class="material-symbols-outlined fill">
+                  check_circle
+                </span>
+                <span>APPROVED</span>
+              </div>
             </div>
           </div>
-        </div>
 
-        <!-- Nav Items -->
-        <nav class="app-sidebar__nav">
-        <a
-          routerLink="/dashboard"
-          class="app-sidebar__link font-label-sm"
-        >
-          <span class="material-symbols-outlined app-sidebar__link-icon">
-            dashboard
-          </span>
-          <span>Dashboard</span>
-        </a>
-        <a
-          routerLink="/patients"
-          class="app-sidebar__link font-label-sm"
-        >
-          <span class="material-symbols-outlined app-sidebar__link-icon">
-            group
-          </span>
-          <span>Patients</span>
-        </a>
-        <a
-          routerLink="/consultations"
-          class="app-sidebar__link app-sidebar__link--active font-label-sm"
-        >
-          <span class="material-symbols-outlined app-sidebar__link-icon--active fill">
-            medical_services
-          </span>
-          <span>Consultations</span>
-        </a>
-        <a
-          routerLink="/reports"
-          class="app-sidebar__link font-label-sm"
-        >
-          <span class="material-symbols-outlined app-sidebar__link-icon">
-            description
-          </span>
-          <span>Reports</span>
-        </a>
-        </nav>
-
-        <!-- Sign Out Section -->
-        <div class="app-sidebar__signout">
-          <a
-            routerLink="/login"
-            class="app-sidebar__signout-link font-label-sm"
-          >
-            <span class="material-symbols-outlined">logout</span>
-            <span>Sign Out</span>
-          </a>
+          <!-- Add Prescription Search -->
+          <div class="cs-rx-search">
+            <div class="cs-rx-search-inner">
+              <span class="material-symbols-outlined cs-rx-search-icon">
+                search
+              </span>
+              <input
+                type="text"
+                placeholder="Add medication (e.g. Amoxicillin)..."
+                class="cs-rx-search-input"
+              />
+            </div>
+          </div>
         </div>
       </div>
-    </aside>
-
-      <main class="app-main">
-        <div class="cs-page">
-          <!-- Top Session Header -->
-          <div class="cs-session-bar">
-            <div class="cs-session-bar__left">
-              <a
-                routerLink="/patients"
-                class="cs-back-btn"
-                title="Back to Patients"
-              >
-                <span class="material-symbols-outlined">arrow_back</span>
-              </a>
-              <div>
-                <div class="cs-session-title-row">
-                  <h1 class="cs-session-title">
-                    Consultation View: Eleanor Vance
-                  </h1>
-                  <span class="cs-session-badge font-label-sm">
-                    Active Session
-                  </span>
-                </div>
-                <p class="cs-session-meta font-label-sm">
-                  MRN-100001 • Age 65 • Assigned: Dr. Reed
-                </p>
-              </div>
-            </div>
-
-            <div class="cs-session-actions">
-              <a
-                routerLink="/patients"
-                class="cs-session-btn cs-session-btn--ghost font-label-sm"
-              >
-                Save Draft
-              </a>
-              <a
-                routerLink="/patients"
-                class="cs-session-btn cs-session-btn--solid font-label-sm"
-              >
-                Finalize Record
-              </a>
-            </div>
-          </div>
-
-          <!-- Main Workspace Body -->
-          <div class="cs-workspace">
-            <div class="cs-workspace__grid">
-              <!-- Left Column: Voice Dictation & Patient Intake -->
-              <div class="cs-col cs-col--left">
-                <!-- Live Dictation Card -->
-                <div class="cs-dictation-card">
-                  <div class="cs-dictation-head">
-                    <h2 class="cs-dictation-title">
-                      <span class="material-symbols-outlined">mic</span>
-                      Live Dictation
-                    </h2>
-                    <div class="cs-dictation-status">
-                      <span class="cs-dictation-status-dot"></span>
-                      <span class="cs-dictation-status-label font-label-sm">
-                        Idle
-                      </span>
-                    </div>
-                  </div>
-
-                  <!-- Live Audio Transcript Box -->
-                  <div class="cs-transcript-box">
-                    <p class="cs-transcript-text font-body-md">
-                      Persistent headache, high BP reading at home
-                    </p>
-                  </div>
-
-                  <!-- Control Buttons -->
-                  <div class="cs-dictation-controls">
-                    <button type="button" class="cs-dictation-btn cs-dictation-btn--ghost font-label-sm">
-                      <span class="material-symbols-outlined">
-                        mic
-                      </span>
-                      Start Mic
-                    </button>
-
-                    <button type="button" class="cs-dictation-btn cs-dictation-btn--solid font-label-sm">
-                      <span class="material-symbols-outlined fill">
-                        auto_awesome
-                      </span>
-                      Generate SOAP
-                    </button>
-                  </div>
-                </div>
-
-                <!-- Patient Intake Card -->
-                <div class="cs-intake-card">
-                  <div class="cs-intake-head">
-                    <h3 class="cs-intake-title">Patient Intake</h3>
-                    <span class="cs-intake-mrn font-label-sm">MRN MRN-100001</span>
-                  </div>
-                  <div class="cs-intake-body">
-                    <div>
-                      <label class="cs-field-label font-label-sm">
-                        Chief Complaint
-                      </label>
-                      <p class="cs-field-value font-body-md">
-                        Persistent headache, high BP reading at home
-                      </p>
-                    </div>
-
-                    <div>
-                      <label class="cs-field-label font-label-sm">
-                        Current Vitals
-                      </label>
-                      <div class="cs-vitals-grid font-data-tabular">
-                        <div class="cs-vitals-cell">
-                          <span class="cs-vitals-cell-label font-label-sm">BP</span>
-                          <span class="cs-vitals-cell-value">145/90</span>
-                        </div>
-                        <div class="cs-vitals-cell">
-                          <span class="cs-vitals-cell-label font-label-sm">Pulse</span>
-                          <span class="cs-vitals-cell-value">82 bpm</span>
-                        </div>
-                        <div class="cs-vitals-cell">
-                          <span class="cs-vitals-cell-label font-label-sm">Temp</span>
-                          <span class="cs-vitals-cell-value">98.6 °F</span>
-                        </div>
-                        <div class="cs-vitals-cell">
-                          <span class="cs-vitals-cell-label font-label-sm">SpO2</span>
-                          <span class="cs-vitals-cell-value">98%</span>
-                        </div>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Middle Column: SOAP Form -->
-              <div class="cs-col cs-col--middle">
-                <div class="cs-soap-card">
-                  <div class="cs-soap-head">
-                    <h2 class="cs-soap-title">
-                      <span class="material-symbols-outlined">edit_document</span>
-                      Consultation Notes (SOAP)
-                    </h2>
-                    <span class="cs-soap-timestamp font-label-sm">Just now</span>
-                  </div>
-
-                  <div class="cs-soap-body">
-                    <!-- Subjective -->
-                    <div class="cs-soap-section">
-                      <div class="cs-soap-section-label font-label-sm">
-                        [S] Subjective
-                      </div>
-                      <textarea
-                        class="cs-soap-textarea font-body-md"
-                        placeholder="Patient's reported symptoms...">Fever, sore throat and fatigue for three days.</textarea>
-                    </div>
-
-                    <!-- Objective -->
-                    <div class="cs-soap-section">
-                      <div class="cs-soap-section-label font-label-sm">
-                        [O] Objective
-                      </div>
-                      <textarea
-                        class="cs-soap-textarea font-body-md"
-                        placeholder="Clinical observations and exam findings...">Temperature 98.6 °F. Mild throat congestion. Pulse 82 bpm. BP 145/90.</textarea>
-                    </div>
-
-                    <!-- Assessment -->
-                    <div class="cs-soap-section">
-                      <div class="cs-soap-section-label font-label-sm">
-                        [A] Assessment
-                      </div>
-                      <textarea
-                        class="cs-soap-textarea cs-soap-textarea--sm font-body-md"
-                        placeholder="Medical diagnosis and clinical reasoning...">Essential Hypertension (Primary)</textarea>
-                    </div>
-
-                    <!-- Plan -->
-                    <div class="cs-soap-section">
-                      <div class="cs-soap-section-label font-label-sm">
-                        [P] Plan
-                      </div>
-                      <textarea
-                        class="cs-soap-textarea font-body-md"
-                        placeholder="Treatment plan, prescriptions, follow-up...">Paracetamol 500mg q6h, hydration, warm saline gargles and follow-up in 3 days.</textarea>
-                    </div>
-                  </div>
-                </div>
-              </div>
-
-              <!-- Right Column: AI Assistant & Rx Orders -->
-              <div class="cs-col cs-col--right">
-                <!-- AI Assistant Module -->
-                <div class="cs-ai-card ai-glow">
-                  <div class="cs-ai-head">
-                    <span class="cs-ai-title">
-                      <span class="material-symbols-outlined fill">
-                        smart_toy
-                      </span>
-                      Clinical AI Assistant
-                    </span>
-                    <span class="cs-ai-badge">
-                      AI
-                    </span>
-                  </div>
-                  <p class="cs-ai-text font-body-md">
-                    Based on complaints of Persistent headache, high BP reading at home, consider evaluating for viral etiology. Recommended monitoring for dehydration and temperature spike.
-                  </p>
-                  <button type="button" class="cs-ai-action font-label-sm">
-                    <span class="material-symbols-outlined">add</span> Add to Assessment
-                  </button>
-                </div>
-
-                <!-- Prescriptions & Orders Module -->
-                <div class="cs-rx-card">
-                  <h3 class="cs-rx-title">
-                    <span class="material-symbols-outlined">medication</span>
-                    Prescription & Orders
-                  </h3>
-
-                  <!-- Med List -->
-                  <div class="cs-rx-list">
-              <div class="cs-rx-item">
-                <p class="cs-rx-name">Paracetamol - 500mg</p>
-                <p class="cs-rx-detail">Take 1 tablet every 6 hours PRN for fever</p>
-                <div class="cs-rx-status">
-                  <span class="material-symbols-outlined fill">
-                    check_circle
-                  </span>
-                  <span>APPROVED</span>
-                </div>
-              </div>
-                  </div>
-
-                  <!-- Add Prescription Search -->
-                  <div class="cs-rx-search">
-                    <div class="cs-rx-search-inner">
-                      <span class="material-symbols-outlined cs-rx-search-icon">
-                        search
-                      </span>
-                      <input
-                        type="text"
-                        placeholder="Add medication (e.g. Amoxicillin)..."
-                        class="cs-rx-search-input"
-                      />
-                    </div>
-                  </div>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-      </main>
     </div>
-
-  <nav class="app-mobile-nav">
-    <!-- Home / Dashboard -->
-    <a
-      routerLink="/dashboard"
-      class="app-mobile-nav__link"
-    >
-      <span class="material-symbols-outlined app-mobile-nav__icon">
-        home
-      </span>
-      <span class="app-mobile-nav__label font-label-sm">Home</span>
-    </a>
-
-    <!-- Patients -->
-    <a
-      routerLink="/patients"
-      class="app-mobile-nav__link"
-    >
-      <span class="material-symbols-outlined app-mobile-nav__icon">
-        person_search
-      </span>
-      <span class="app-mobile-nav__label font-label-sm">Patients</span>
-    </a>
-
-    <!-- Add / Consultations -->
-    <a
-      routerLink="/consultations"
-      class="app-mobile-nav__fab app-mobile-nav__fab--active"
-      aria-label="Add Consultation"
-    >
-      <span class="material-symbols-outlined app-mobile-nav__fab-icon fill">
-        add_circle
-      </span>
-      <span class="app-sr-only">Add Consultation</span>
-    </a>
-
-    <!-- Reports -->
-    <a
-      routerLink="/reports"
-      class="app-mobile-nav__link"
-    >
-      <span class="material-symbols-outlined app-mobile-nav__icon">
-        analytics
-      </span>
-      <span class="app-mobile-nav__label font-label-sm">Reports</span>
-    </a>
-  </nav>
+  </div>
 </div>
