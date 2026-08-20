@@ -1,0 +1,121 @@
+<!-- 
+  Start6
+ → Login's template renders          (from login.html) 
+ -->
+<div class="bg-surface-container-low min-h-screen flex items-center justify-center p-4 antialiased selection:bg-primary-container selection:text-on-primary-container relative overflow-hidden">
+  <!-- Ambient Background Element -->
+  <div class="fixed inset-0 pointer-events-none overflow-hidden z-0 flex items-center justify-center opacity-40">
+    <div class="absolute w-[800px] h-[800px] bg-gradient-to-br from-primary-fixed via-transparent to-transparent rounded-full blur-[100px] -top-64 -left-64"></div>
+    <div class="absolute w-[600px] h-[600px] bg-gradient-to-tl from-surface-container-high via-transparent to-transparent rounded-full blur-[80px] bottom-0 right-0"></div>
+  </div>
+
+  <!-- Login Container Card -->
+  <main class="w-full max-w-[440px] relative z-10 animate-fadeIn">
+    <div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-sm p-8 md:p-10">
+      <!-- Header / Brand -->
+      <header class="flex flex-col items-center mb-8">
+        <div class="w-14 h-14 rounded-full bg-primary-container flex items-center justify-center mb-5 text-primary shadow-xs">
+          <span class="material-symbols-outlined text-[32px]" style="font-variation-settings: 'FILL' 1">
+            health_and_safety
+          </span>
+        </div>
+        <h1 class="font-headline-lg text-2xl text-primary tracking-tight mb-1 text-center font-black">
+          HealthOS <span class="font-normal text-on-surface">AI</span>
+        </h1>
+        <p class="font-body-md text-sm text-on-surface-variant text-center">
+          Secure Clinical Authentication
+        </p>
+      </header>
+
+      <!-- Login Form -->
+      <form class="space-y-5">
+        <!-- Medical ID Field -->
+        <div class="space-y-1.5">
+          <label class="block font-label-sm text-xs text-on-surface font-semibold" for="medical_id">
+            Medical ID
+          </label>
+          <div class="relative flex items-center">
+            <div class="absolute left-3 text-outline pointer-events-none flex items-center">
+              <span class="material-symbols-outlined text-[20px]">badge</span>
+            </div>
+            <input
+              id="medical_id"
+              name="medical_id"
+              type="text"
+              value="884-2103"
+              placeholder="e.g. 884-2103"
+              required
+              class="w-full pl-10 pr-4 py-3 bg-surface border border-outline-variant rounded-lg font-data-tabular text-sm text-on-surface placeholder:text-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
+            />
+          </div>
+        </div>
+
+        <!-- Password Field -->
+        <div class="space-y-1.5">
+          <div class="flex items-center justify-between">
+            <label class="block font-label-sm text-xs text-on-surface font-semibold" for="password">
+              Password
+            </label>
+            <a
+              href="#forgot"
+              class="font-label-sm text-xs text-primary hover:text-on-primary-fixed-variant transition-colors focus:outline-none focus:underline"
+            >
+              Forgot Password?
+            </a>
+          </div>
+          <div class="relative flex items-center">
+            <div class="absolute left-3 text-outline pointer-events-none flex items-center">
+              <span class="material-symbols-outlined text-[20px]">lock</span>
+            </div>
+            <input
+              id="password"
+              name="password"
+              type="password"
+              value="••••••••"
+              placeholder="••••••••"
+              required
+              class="w-full pl-10 pr-10 py-3 bg-surface border border-outline-variant rounded-lg font-body-md text-sm text-on-surface placeholder:text-outline focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors"
+            />
+            <button
+              type="button"
+              aria-label="Toggle password visibility"
+              class="absolute right-3 text-outline hover:text-on-surface transition-colors focus:outline-none flex items-center"
+            >
+              <span class="material-symbols-outlined text-[20px]">
+                visibility_off
+              </span>
+            </button>
+          </div>
+        </div>
+
+        <!-- Submit Action -->
+        <div class="pt-2">
+          <a routerLink="/dashboard"
+            class="w-full flex items-center justify-center gap-2 bg-primary text-on-primary py-3 px-4 rounded-lg font-label-sm text-xs hover:bg-on-primary-fixed-variant focus:ring-2 focus:ring-primary focus:ring-offset-2 transition-all active:scale-[0.98] font-bold shadow-sm"
+          >
+            <span>Sign In</span>
+            <span class="material-symbols-outlined text-[18px]">arrow_forward</span>
+          </a>
+        </div>
+      </form>
+
+      <!-- Security Footer -->
+      <footer class="mt-8 pt-6 border-t border-outline-variant">
+        <div class="flex items-center justify-center gap-2 text-on-surface-variant bg-surface-container py-2.5 rounded-lg border border-surface-container-high">
+          <span class="material-symbols-outlined text-[16px] text-tertiary">encrypted</span>
+          <span class="font-label-sm text-xs font-medium">End-to-End Encrypted Session</span>
+        </div>
+      </footer>
+    </div>
+
+    <!-- System Status -->
+    <div class="mt-6 text-center">
+      <p class="font-label-sm text-xs text-on-surface-variant flex items-center justify-center gap-2">
+        <span class="w-2.5 h-2.5 rounded-full bg-tertiary-container relative flex items-center justify-center">
+          <span class="absolute w-full h-full rounded-full bg-tertiary animate-ping opacity-75"></span>
+        </span>
+        <span>All Systems Operational</span>
+      </p>
+    </div>
+  </main>
+</div>

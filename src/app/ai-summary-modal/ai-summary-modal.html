@@ -1,0 +1,108 @@
+<div class="fixed inset-0 bg-on-surface/50 backdrop-blur-xs z-50 flex items-center justify-center p-4 animate-fadeIn">
+  <div class="bg-surface-container-lowest border border-primary-fixed rounded-2xl shadow-2xl w-full max-w-2xl overflow-hidden flex flex-col max-h-[85vh] ai-glow">
+    <!-- Header -->
+    <div class="px-6 py-4 border-b border-outline-variant bg-gradient-to-r from-primary-container/30 via-primary/10 to-transparent flex justify-between items-center">
+      <div class="flex items-center gap-2">
+        <span class="material-symbols-outlined text-primary fill text-2xl" style="font-variation-settings: 'FILL' 1">
+          auto_awesome
+        </span>
+        <div>
+          <h2 class="font-headline-md text-base font-bold text-primary">
+            Full AI Executive Clinical Summary
+          </h2>
+          <p class="font-label-sm text-xs text-on-surface-variant">
+            Patient: Eleanor Vance (MRN-100001)
+          </p>
+        </div>
+      </div>
+
+      <button type="button" (click)="close.emit()" class="text-on-surface-variant hover:text-error p-1 rounded-full">
+        <span class="material-symbols-outlined text-2xl">close</span>
+      </button>
+    </div>
+
+    <!-- Content Body -->
+    <div class="p-6 space-y-5 overflow-y-auto text-xs sm:text-sm font-body-md text-on-surface leading-relaxed">
+      <!-- Key Findings -->
+      <div class="p-4 bg-surface-container-low rounded-xl border border-primary-fixed-dim/50">
+        <h3 class="font-label-sm text-xs text-primary uppercase font-bold tracking-wider mb-2 flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-base">clinical_notes</span>
+          Primary Diagnostic Synthesis
+        </h3>
+        <p class="text-on-surface">Patient exhibits marked elevation in HbA1c (8.4%) indicating poor glycemic control over the past 3 months. Concurrent mild hyperlipidemia noted (LDL 135 mg/dL). Renal function remains stable (eGFR > 60). No acute inflammatory markers detected.</p>
+      </div>
+
+      <!-- Risk Factors & Warning Flags -->
+      <div class="p-4 bg-error-container/30 rounded-xl border border-error/30">
+        <h3 class="font-label-sm text-xs text-error uppercase font-bold tracking-wider mb-2 flex items-center gap-1.5">
+          <span class="material-symbols-outlined text-base">warning</span>
+          Actionable Risk Indicators
+        </h3>
+        <p class="text-on-error-container font-medium">Risk of diabetic nephropathy progression. Recommend re-evaluation of current metformin dosage.</p>
+      </div>
+
+      <!-- Vital Sign Matrix -->
+      <div>
+        <h3 class="font-label-sm text-xs text-on-surface-variant uppercase font-bold tracking-wider mb-2">
+          Vital Metrics Assessment
+        </h3>
+        <div class="grid grid-cols-2 sm:grid-cols-4 gap-3 font-data-tabular">
+          <div class="p-2.5 bg-surface border border-outline-variant/60 rounded-lg">
+            <span class="font-label-sm text-[10px] text-outline block">BP Status</span>
+            <span class="font-bold text-error">145/90</span>
+          </div>
+          <div class="p-2.5 bg-surface border border-outline-variant/60 rounded-lg">
+            <span class="font-label-sm text-[10px] text-outline block">Heart Rate</span>
+            <span class="font-bold text-on-surface">82 bpm</span>
+          </div>
+          <div class="p-2.5 bg-surface border border-outline-variant/60 rounded-lg">
+            <span class="font-label-sm text-[10px] text-outline block">Potassium</span>
+            <span class="font-bold text-error">3.2 mmol/L (Low)</span>
+          </div>
+          <div class="p-2.5 bg-surface border border-outline-variant/60 rounded-lg">
+            <span class="font-label-sm text-[10px] text-outline block">Glucose</span>
+            <span class="font-bold text-error">142 mg/dL (High)</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Recommendations -->
+      <div>
+        <h3 class="font-label-sm text-xs text-on-surface-variant uppercase font-bold tracking-wider mb-2">
+          Recommended Care Adjustments
+        </h3>
+        <ul class="space-y-2">
+          <li class="flex items-start gap-2 bg-surface p-2.5 rounded-lg border border-outline-variant/50">
+            <span class="material-symbols-outlined text-tertiary text-base shrink-0 mt-0.5">
+              check_circle
+            </span>
+            <span>Adjust Metformin dosage from 500mg BID to 1000mg BID with meals.</span>
+          </li>
+          <li class="flex items-start gap-2 bg-surface p-2.5 rounded-lg border border-outline-variant/50">
+            <span class="material-symbols-outlined text-tertiary text-base shrink-0 mt-0.5">
+              check_circle
+            </span>
+            <span>Schedule follow-up HbA1c and Comprehensive Metabolic Panel in 12 weeks.</span>
+          </li>
+          <li class="flex items-start gap-2 bg-surface p-2.5 rounded-lg border border-outline-variant/50">
+            <span class="material-symbols-outlined text-tertiary text-base shrink-0 mt-0.5">
+              check_circle
+            </span>
+            <span>Dietary consultation for glycemic index control and potassium replenishment.</span>
+          </li>
+        </ul>
+      </div>
+    </div>
+
+    <!-- Footer -->
+    <div class="px-6 py-3 border-t border-outline-variant bg-surface-container-low flex justify-end">
+      <button
+        type="button"
+        (click)="close.emit()"
+        class="px-5 py-2 bg-primary text-on-primary font-label-sm text-xs rounded-lg font-bold hover:bg-on-primary-fixed-variant"
+      >
+        Close AI Summary
+      </button>
+    </div>
+  </div>
+</div>

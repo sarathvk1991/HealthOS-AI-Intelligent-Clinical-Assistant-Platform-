@@ -1,0 +1,459 @@
+<div class="dash-body font-body-md">
+  <header class="dash-header">
+    <div class="dash-header__left">
+      <button aria-label="Menu" class="dash-icon-btn">
+        <span class="material-symbols-outlined">menu</span>
+      </button>
+
+      <a class="dash-logo" routerLink="/dashboard">
+        <span class="material-symbols-outlined dash-logo__icon fill">
+          health_and_safety
+        </span>
+        <span class="dash-logo__text font-headline-md">
+          HealthOS <span class="dash-logo__text-sub">AI</span>
+        </span>
+      </a>
+
+      <h1 class="dash-header__title">
+        healthos-ai - Executive Overview
+      </h1>
+    </div>
+
+  <!-- Center Search Input for Patient & Reports screens -->
+  <div class="dash-header__search">
+    <div class="dash-header__search-inner">
+      <span class="material-symbols-outlined dash-header__search-icon">
+        search
+      </span>
+      <input
+        type="text"
+        value=""
+        placeholder="Search patients by name, ID, or condition..."
+        class="dash-header__search-input"
+      />
+    </div>
+  </div>
+
+    <!-- Right Top Nav & Action Buttons -->
+    <div class="dash-header__right">
+      <!-- Top Nav Links for Desktop -->
+      <nav class="dash-header__nav">
+      <a
+        routerLink="/dashboard"
+        class="dash-header__nav-link dash-header__nav-link--active"
+      >
+        Dashboard
+      </a>
+      <a
+        routerLink="/patients"
+        class="dash-header__nav-link"
+      >
+        Patients
+      </a>
+      <a
+        routerLink="/consultations"
+        class="dash-header__nav-link"
+      >
+        Consultations
+      </a>
+      <a
+        routerLink="/reports"
+        class="dash-header__nav-link"
+      >
+        Reports
+      </a>
+      </nav>
+
+      <!-- Notifications Icon (closed by default) -->
+      <div class="dash-header__notif">
+        <button
+          class="dash-icon-btn"
+          aria-label="Notifications"
+        >
+          <span class="material-symbols-outlined">notifications</span>
+          <span class="dash-header__notif-dot"></span>
+        </button>
+      </div>
+
+      <!-- View Full AI Summary Action Button -->
+      <button type="button" class="dash-btn-ai">
+        <span class="material-symbols-outlined fill">
+          auto_awesome
+        </span>
+        <span class="dash-hide-mobile">View Full AI Summary</span>
+        <span class="dash-show-mobile">AI</span>
+      </button>
+
+      <!-- New Patient Button -->
+      <button type="button" class="dash-btn-primary">
+        <span class="material-symbols-outlined">add</span>
+        <span class="dash-hide-mobile">New Patient</span>
+      </button>
+    </div>
+  </header>
+
+    <div class="dash-body-layout">
+    <aside class="dash-sidebar">
+      <div class="dash-sidebar__inner">
+        <!-- Mobile Close Button -->
+        <div class="dash-sidebar__mobile-head">
+          <span class="dash-sidebar__mobile-title font-headline-md">healthos-ai Navigation</span>
+          <button class="dash-sidebar__close">
+            <span class="material-symbols-outlined">close</span>
+          </button>
+        </div>
+
+        <!-- Practitioner Profile Header -->
+        <div class="dash-sidebar__profile">
+          <div class="dash-sidebar__profile-row">
+            <img
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuCTyOI8Qm5FrsN5y88waJmIP-AF9pzqnPHCwC9OTgJ81T0MibdAbYr0Bq5pmnhfWeRbqxYFCFLmbBd-RYFnDuVOpC-YZ-3ENuOHjdpFe65NYIF7madviOT7DGzvoiFLfA_7vRFjiMen37TFpNqGEfj4_X2ptr0D6xK_TUJd5jF3Md_S9VMJTscTUXfQVP_5_PsIaUzFiHRnber9IfePWNs4uK7zMVB5PRFxejIO9_tqPwc9MVFo6rt_gQ"
+              alt="Dr. Reed"
+              class="dash-sidebar__avatar"
+            />
+            <div class="dash-sidebar__profile-info">
+              <h2 class="dash-sidebar__profile-name font-headline-md">
+                Dr. Reed
+              </h2>
+              <p class="dash-sidebar__profile-role font-label-sm">Lead Practitioner</p>
+              <p class="dash-sidebar__profile-id font-label-sm">
+                Medical ID: 884-2103
+              </p>
+            </div>
+          </div>
+        </div>
+
+        <!-- Nav Items -->
+        <nav class="dash-sidebar__nav">
+        <a
+          routerLink="/dashboard"
+          class="dash-sidebar__link dash-sidebar__link--active font-label-sm"
+        >
+          <span class="material-symbols-outlined dash-sidebar__link-icon--active fill">
+            dashboard
+          </span>
+          <span>Dashboard</span>
+        </a>
+        <a
+          routerLink="/patients"
+          class="dash-sidebar__link font-label-sm"
+        >
+          <span class="material-symbols-outlined dash-sidebar__link-icon">
+            group
+          </span>
+          <span>Patients</span>
+        </a>
+        <a
+          routerLink="/consultations"
+          class="dash-sidebar__link font-label-sm"
+        >
+          <span class="material-symbols-outlined dash-sidebar__link-icon">
+            medical_services
+          </span>
+          <span>Consultations</span>
+        </a>
+        <a
+          routerLink="/reports"
+          class="dash-sidebar__link font-label-sm"
+        >
+          <span class="material-symbols-outlined dash-sidebar__link-icon">
+            description
+          </span>
+          <span>Reports</span>
+        </a>
+        </nav>
+
+        <!-- Sign Out Section -->
+        <div class="dash-sidebar__signout">
+          <a
+            routerLink="/login"
+            class="dash-sidebar__signout-link font-label-sm"
+          >
+            <span class="material-symbols-outlined">logout</span>
+            <span>Sign Out</span>
+          </a>
+        </div>
+      </div>
+    </aside>
+
+      <main class="dash-main">
+        <div class="dash-content">
+          <div class="dash-container">
+            <!-- Welcome Header Banner -->
+            <div class="dash-banner">
+              <div>
+                <h1 class="dash-banner__title font-headline-lg">
+                  Welcome back, Dr. Reed
+                </h1>
+                <p class="dash-banner__subtitle font-body-md">
+                  Lead Practitioner • Medical ID: 884-2103 • Clinical AI Active
+                </p>
+              </div>
+              <div class="dash-banner__actions">
+                <a
+                  routerLink="/consultations"
+                  class="dash-banner__btn dash-banner__btn--solid"
+                >
+                  <span class="material-symbols-outlined">medical_services</span>
+                  Start Consult
+                </a>
+                <button type="button" class="dash-banner__btn dash-banner__btn--ghost">
+                  <span class="material-symbols-outlined">add</span>
+                  Add Patient
+                </button>
+              </div>
+            </div>
+
+            <!-- Metrics Bar -->
+            <div class="dash-metrics">
+              <div class="dash-metric-card">
+                <div class="dash-metric-card__row">
+                  <span class="dash-metric-card__label font-label-sm">Total Patients</span>
+                  <span class="material-symbols-outlined dash-metric-card__icon">group</span>
+                </div>
+                <p class="dash-metric-card__value font-headline-lg">
+                  7
+                </p>
+                <span class="dash-metric-card__hint dash-metric-card__hint--tertiary font-label-sm">Active in directory</span>
+              </div>
+
+              <div class="dash-metric-card">
+                <div class="dash-metric-card__row">
+                  <span class="dash-metric-card__label font-label-sm">Critical Flags</span>
+                  <span class="material-symbols-outlined dash-metric-card__icon dash-metric-card__icon--error">warning</span>
+                </div>
+                <p class="dash-metric-card__value dash-metric-card__value--error font-headline-lg">
+                  2
+                </p>
+                <span class="dash-metric-card__hint dash-metric-card__hint--error font-label-sm">Requires immediate review</span>
+              </div>
+
+              <div class="dash-metric-card">
+                <div class="dash-metric-card__row">
+                  <span class="dash-metric-card__label font-label-sm">Lab Reports</span>
+                  <span class="material-symbols-outlined dash-metric-card__icon">description</span>
+                </div>
+                <p class="dash-metric-card__value font-headline-lg">12</p>
+                <span class="dash-metric-card__hint dash-metric-card__hint--muted font-label-sm">CMP & Lipid ready</span>
+              </div>
+
+              <div class="dash-metric-card">
+                <div class="dash-metric-card__row">
+                  <span class="dash-metric-card__label font-label-sm">AI Insights</span>
+                  <span class="material-symbols-outlined dash-metric-card__icon fill">
+                    auto_awesome
+                  </span>
+                </div>
+                <p class="dash-metric-card__value dash-metric-card__value--primary font-headline-lg">98.4%</p>
+                <span class="dash-metric-card__hint dash-metric-card__hint--tertiary font-label-sm">Accuracy score</span>
+              </div>
+            </div>
+
+            <!-- Main Content Grid -->
+            <div class="dash-grid">
+              <!-- Urgent / High Risk Queue -->
+              <div class="dash-queue">
+                <div class="dash-queue__head">
+                  <h2 class="dash-queue__title font-headline-md">
+                    <span class="material-symbols-outlined dash-queue__title-icon">error</span>
+                    High Priority Patients Queue
+                  </h2>
+                  <a
+                    routerLink="/patients"
+                    class="dash-queue__view-all font-label-sm"
+                  >
+                    View All <span class="material-symbols-outlined">arrow_forward</span>
+                  </a>
+                </div>
+
+                <div class="dash-queue__list">
+          <a
+            routerLink="/patients"
+            class="dash-queue__item"
+          >
+            <div class="dash-queue__item-left">
+              <div class="dash-queue__avatar">
+                EV
+              </div>
+              <div>
+                <h3 class="dash-queue__name">Eleanor Vance</h3>
+                <p class="dash-queue__meta font-label-sm">
+                  MRN-100001 • Vitals: BP 145/90
+                </p>
+              </div>
+            </div>
+
+            <div class="dash-queue__item-right">
+              <span class="dash-queue__badge dash-queue__badge--high font-label-sm">
+                HIGH RISK
+              </span>
+              <span class="material-symbols-outlined dash-queue__chevron">
+                chevron_right
+              </span>
+            </div>
+          </a>
+          <a
+            routerLink="/patients"
+            class="dash-queue__item"
+          >
+            <div class="dash-queue__item-left">
+              <div class="dash-queue__avatar">
+                JL
+              </div>
+              <div>
+                <h3 class="dash-queue__name">Jameson Locke</h3>
+                <p class="dash-queue__meta font-label-sm">
+                  MRN-100002 • Vitals: BP 122/80
+                </p>
+              </div>
+            </div>
+
+            <div class="dash-queue__item-right">
+              <span class="dash-queue__badge dash-queue__badge--neutral font-label-sm">
+                STABLE
+              </span>
+              <span class="material-symbols-outlined dash-queue__chevron">
+                chevron_right
+              </span>
+            </div>
+          </a>
+          <a
+            routerLink="/patients"
+            class="dash-queue__item"
+          >
+            <div class="dash-queue__item-left">
+              <div class="dash-queue__avatar">
+                SJ
+              </div>
+              <div>
+                <h3 class="dash-queue__name">Sarah Jenkins</h3>
+                <p class="dash-queue__meta font-label-sm">
+                  MRN-100003 • Vitals: BP 128/82
+                </p>
+              </div>
+            </div>
+
+            <div class="dash-queue__item-right">
+              <span class="dash-queue__badge dash-queue__badge--neutral font-label-sm">
+                RECOVERING
+              </span>
+              <span class="material-symbols-outlined dash-queue__chevron">
+                chevron_right
+              </span>
+            </div>
+          </a>
+          <a
+            routerLink="/patients"
+            class="dash-queue__item"
+          >
+            <div class="dash-queue__item-left">
+              <div class="dash-queue__avatar">
+                JD
+              </div>
+              <div>
+                <h3 class="dash-queue__name">John Doe</h3>
+                <p class="dash-queue__meta font-label-sm">
+                  MRN-100004 • Vitals: BP 124/80
+                </p>
+              </div>
+            </div>
+
+            <div class="dash-queue__item-right">
+              <span class="dash-queue__badge dash-queue__badge--neutral font-label-sm">
+                Active
+              </span>
+              <span class="material-symbols-outlined dash-queue__chevron">
+                chevron_right
+              </span>
+            </div>
+          </a>
+                </div>
+              </div>
+
+              <!-- Today's Schedule & Recent AI Summaries -->
+              <div class="dash-side-col">
+                <div class="dash-schedule">
+                  <h2 class="dash-schedule__title font-headline-md">
+                    <span class="material-symbols-outlined dash-schedule__title-icon">event</span>
+                    Today's Schedule
+                  </h2>
+                  <div class="dash-schedule__list">
+                    <div class="dash-schedule__item">
+                      <div>
+                        <p class="dash-schedule__name">Eleanor Vance</p>
+                        <p class="dash-schedule__detail">Follow-up HbA1c & Diabetes</p>
+                      </div>
+                      <span class="dash-schedule__time dash-schedule__time--accent font-label-sm">10:42 AM</span>
+                    </div>
+
+                    <div class="dash-schedule__item">
+                      <div>
+                        <p class="dash-schedule__name">Jameson Locke</p>
+                        <p class="dash-schedule__detail">Routine Checkup & Vitals</p>
+                      </div>
+                      <span class="dash-schedule__time dash-schedule__time--muted font-label-sm">02:00 PM</span>
+                    </div>
+
+                    <div class="dash-schedule__item">
+                      <div>
+                        <p class="dash-schedule__name">Sarah Jenkins</p>
+                        <p class="dash-schedule__detail">Post-op ACL Knee Review</p>
+                      </div>
+                      <span class="dash-schedule__time dash-schedule__time--muted font-label-sm">03:30 PM</span>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+
+  <nav class="dash-mobile-nav">
+    <!-- Home / Dashboard -->
+    <a
+      routerLink="/dashboard"
+      class="dash-mobile-nav__link dash-mobile-nav__link--active"
+    >
+      <span class="material-symbols-outlined dash-mobile-nav__icon fill">
+        home
+      </span>
+      <span class="dash-mobile-nav__label font-label-sm">Home</span>
+    </a>
+
+    <!-- Patients -->
+    <a
+      routerLink="/patients"
+      class="dash-mobile-nav__link"
+    >
+      <span class="material-symbols-outlined dash-mobile-nav__icon">
+        person_search
+      </span>
+      <span class="dash-mobile-nav__label font-label-sm">Patients</span>
+    </a>
+
+    <!-- Add / Consultations -->
+    <a
+      routerLink="/consultations"
+      class="dash-mobile-nav__fab"
+      aria-label="Add Consultation"
+    >
+      <span class="material-symbols-outlined dash-mobile-nav__fab-icon fill">
+        add_circle
+      </span>
+      <span class="dash-sr-only">Add Consultation</span>
+    </a>
+
+    <!-- Reports -->
+    <a
+      routerLink="/reports"
+      class="dash-mobile-nav__link"
+    >
+      <span class="material-symbols-outlined dash-mobile-nav__icon">
+        analytics
+      </span>
+      <span class="dash-mobile-nav__label font-label-sm">Reports</span>
+    </a>
+  </nav>
+</div>

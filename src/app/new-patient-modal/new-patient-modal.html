@@ -1,0 +1,213 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>New Patient Modal (Demo) - healthos-ai</title>
+    <!-- Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@500;600&family=Manrope:wght@600;700;800;900&display=swap" rel="stylesheet" />
+    <!-- Material Symbols -->
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet" />
+    <!-- Tailwind Play CDN (v3 JIT) configured to read this app's design tokens -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+      tailwind.config = {
+        theme: {
+          extend: {
+            colors: {
+              primary: 'var(--color-primary)',
+              'primary-container': 'var(--color-primary-container)',
+              'on-primary': 'var(--color-on-primary)',
+              'on-primary-container': 'var(--color-on-primary-container)',
+              'primary-fixed': 'var(--color-primary-fixed)',
+              'primary-fixed-dim': 'var(--color-primary-fixed-dim)',
+              'on-primary-fixed': 'var(--color-on-primary-fixed)',
+              'on-primary-fixed-variant': 'var(--color-on-primary-fixed-variant)',
+              secondary: 'var(--color-secondary)',
+              'secondary-container': 'var(--color-secondary-container)',
+              'on-secondary': 'var(--color-on-secondary)',
+              'on-secondary-container': 'var(--color-on-secondary-container)',
+              tertiary: 'var(--color-tertiary)',
+              'tertiary-container': 'var(--color-tertiary-container)',
+              'on-tertiary': 'var(--color-on-tertiary)',
+              'on-tertiary-container': 'var(--color-on-tertiary-container)',
+              'tertiary-fixed': 'var(--color-tertiary-fixed)',
+              'tertiary-fixed-dim': 'var(--color-tertiary-fixed-dim)',
+              background: 'var(--color-background)',
+              'on-background': 'var(--color-on-background)',
+              surface: 'var(--color-surface)',
+              'surface-bright': 'var(--color-surface-bright)',
+              'on-surface': 'var(--color-on-surface)',
+              'on-surface-variant': 'var(--color-on-surface-variant)',
+              'surface-container-lowest': 'var(--color-surface-container-lowest)',
+              'surface-container-low': 'var(--color-surface-container-low)',
+              'surface-container': 'var(--color-surface-container)',
+              'surface-container-high': 'var(--color-surface-container-high)',
+              'surface-container-highest': 'var(--color-surface-container-highest)',
+              'surface-variant': 'var(--color-surface-variant)',
+              'surface-dim': 'var(--color-surface-dim)',
+              outline: 'var(--color-outline)',
+              'outline-variant': 'var(--color-outline-variant)',
+              error: 'var(--color-error)',
+              'on-error': 'var(--color-on-error)',
+              'error-container': 'var(--color-error-container)',
+              'on-error-container': 'var(--color-on-error-container)',
+            }
+          }
+        }
+      }
+    </script>
+    <!-- <link rel="stylesheet" href="shared/theme.css" /> -->
+    <link rel="stylesheet" href="new-patient-modal.css" />
+  </head>
+  <body class="bg-surface min-h-screen font-body-md antialiased">
+    <div class="fixed inset-0 bg-on-surface/50 backdrop-blur-xs z-50 flex items-center justify-center p-4 animate-fadeIn">
+      <div class="bg-surface-container-lowest border border-outline-variant rounded-xl shadow-xl w-full max-w-lg overflow-hidden flex flex-col max-h-[90vh]">
+        <!-- Header -->
+        <div class="px-6 py-4 border-b border-outline-variant flex justify-between items-center bg-surface-container-low">
+          <h2 class="font-headline-md text-base font-bold text-primary flex items-center gap-2">
+            <span class="material-symbols-outlined text-lg">person_add</span>
+            Add New Patient
+          </h2>
+          <a href="patients.html" class="text-on-surface-variant hover:text-error p-1 rounded-full">
+            <span class="material-symbols-outlined text-xl">close</span>
+          </a>
+        </div>
+
+        <!-- Form Body -->
+        <form class="p-6 space-y-4 overflow-y-auto flex-1 text-xs">
+          <div>
+            <label class="block font-label-sm font-semibold mb-1">Full Patient Name *</label>
+            <input
+              type="text"
+              required
+              value=""
+              placeholder="e.g. Sarah Connor"
+              class="w-full p-2.5 bg-surface border border-outline-variant rounded-lg font-body-md text-sm outline-none focus:border-primary"
+            />
+          </div>
+
+          <div class="grid grid-cols-2 gap-3">
+            <div>
+              <label class="block font-label-sm font-semibold mb-1">Age</label>
+              <input
+                type="number"
+                value="35"
+                class="w-full p-2.5 bg-surface border border-outline-variant rounded-lg font-body-md text-sm outline-none focus:border-primary"
+              />
+            </div>
+
+            <div>
+              <label class="block font-label-sm font-semibold mb-1">DOB</label>
+              <input
+                type="date"
+                value="1991-05-15"
+                class="w-full p-2.5 bg-surface border border-outline-variant rounded-lg font-body-md text-sm outline-none focus:border-primary"
+              />
+            </div>
+          </div>
+
+          <div class="grid grid-cols-3 gap-3">
+            <div>
+              <label class="block font-label-sm font-semibold mb-1">Gender</label>
+              <select
+                class="w-full p-2.5 bg-surface border border-outline-variant rounded-lg font-body-md text-sm outline-none focus:border-primary"
+              >
+              <option value="Female" selected>Female</option>
+              <option value="Male">Male</option>
+              <option value="Other">Other</option>
+              </select>
+            </div>
+
+            <div>
+              <label class="block font-label-sm font-semibold mb-1">Blood Type</label>
+              <input
+                type="text"
+                value="O+"
+                class="w-full p-2.5 bg-surface border border-outline-variant rounded-lg font-body-md text-sm outline-none focus:border-primary"
+              />
+            </div>
+
+            <div>
+              <label class="block font-label-sm font-semibold mb-1">Status</label>
+              <select
+                class="w-full p-2.5 bg-surface border border-outline-variant rounded-lg font-body-md text-sm outline-none focus:border-primary"
+              >
+              <option value="Active" selected>Active</option>
+              <option value="STABLE">STABLE</option>
+              <option value="HIGH RISK">HIGH RISK</option>
+              <option value="RECOVERING">RECOVERING</option>
+              <option value="Inpatient">Inpatient</option>
+              </select>
+            </div>
+          </div>
+
+          <div>
+            <label class="block font-label-sm font-semibold mb-1">Known Allergies (if any)</label>
+            <input
+              type="text"
+              value=""
+              placeholder="e.g. Penicillin, Sulfa"
+              class="w-full p-2.5 bg-surface border border-outline-variant rounded-lg font-body-md text-sm outline-none focus:border-primary"
+            />
+          </div>
+
+          <div>
+            <label class="block font-label-sm font-semibold mb-1">Initial Vitals (BP / HR / Temp / SpO2)</label>
+            <div class="grid grid-cols-4 gap-2">
+              <input
+                type="text"
+                value="120/80"
+                placeholder="120/80"
+                class="p-2 bg-surface border border-outline-variant rounded font-data-tabular text-xs"
+              />
+              <input
+                type="text"
+                value="72"
+                placeholder="72"
+                class="p-2 bg-surface border border-outline-variant rounded font-data-tabular text-xs"
+              />
+              <input
+                type="text"
+                value="98.6 °F"
+                placeholder="98.6 F"
+                class="p-2 bg-surface border border-outline-variant rounded font-data-tabular text-xs"
+              />
+              <input
+                type="text"
+                value="99%"
+                placeholder="99%"
+                class="p-2 bg-surface border border-outline-variant rounded font-data-tabular text-xs"
+              />
+            </div>
+          </div>
+
+          <div>
+            <label class="block font-label-sm font-semibold mb-1">Chief Complaint / Reason for Visit</label>
+            <textarea
+              placeholder="Describe primary symptom..."
+              class="w-full p-2.5 bg-surface border border-outline-variant rounded-lg font-body-md text-sm outline-none focus:border-primary min-h-[70px] resize-none"
+            ></textarea>
+          </div>
+
+          <div class="pt-4 border-t border-outline-variant flex justify-end gap-2">
+            <a
+              href="patients.html"
+              class="px-4 py-2 bg-surface border border-outline-variant rounded-lg font-label-sm hover:bg-surface-variant"
+            >
+              Cancel
+            </a>
+            <a
+              href="patients.html"
+              class="px-4 py-2 bg-primary text-on-primary rounded-lg font-label-sm font-bold hover:bg-on-primary-fixed-variant"
+            >
+              Add Patient Record
+            </a>
+          </div>
+        </form>
+      </div>
+    </div>
+  </body>
+</html>
