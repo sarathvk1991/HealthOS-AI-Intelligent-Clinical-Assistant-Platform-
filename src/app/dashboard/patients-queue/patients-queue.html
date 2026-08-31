@@ -1,0 +1,20 @@
+<div class="dash-queue">
+  <div class="dash-queue__head">
+    <h2 class="dash-queue__title font-headline-md">
+      <span class="material-symbols-outlined dash-queue__title-icon">
+        {{ icon }}
+      </span>
+      {{ title }}
+    </h2>
+    <a routerLink="/patients" class="dash-queue__view-all font-label-sm">
+      View All <span class="material-symbols-outlined">arrow_forward</span>
+    </a>
+  </div>
+
+  <div class="dash-queue__list">
+    <app-patient-queue-item
+      *ngFor="let patient of patients"
+      [patient]="patient"
+    ></app-patient-queue-item>
+  </div>
+</div>

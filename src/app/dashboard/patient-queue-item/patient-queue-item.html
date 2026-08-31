@@ -1,0 +1,20 @@
+<a [routerLink]="patient.route" class="dash-queue__item">
+  <div class="dash-queue__item-left">
+    <div class="dash-queue__avatar">{{ patient.initials }}</div>
+    <div>
+      <h3 class="dash-queue__name">{{ patient.name }}</h3>
+      <p class="dash-queue__meta font-label-sm">
+        {{ patient.mrn }} • Vitals: {{ patient.vitals }}
+      </p>
+    </div>
+  </div>
+
+  <div class="dash-queue__item-right">
+    <span class="dash-queue__badge font-label-sm" [ngClass]="getStatusClass()">
+      {{ patient.status }}
+    </span>
+    <span class="material-symbols-outlined dash-queue__chevron">
+      chevron_right
+    </span>
+  </div>
+</a>

@@ -1,0 +1,14 @@
+<div class="dash-schedule">
+  <h2 class="dash-schedule__title font-headline-md">
+    <span class="material-symbols-outlined dash-schedule__title-icon">
+      {{ icon }}
+    </span>
+    {{ title }}
+  </h2>
+  <div class="dash-schedule__list">
+    <app-schedule-item
+      *ngFor="let item of scheduleItems"
+      [item]="item"
+    ></app-schedule-item>
+  </div>
+</div>
