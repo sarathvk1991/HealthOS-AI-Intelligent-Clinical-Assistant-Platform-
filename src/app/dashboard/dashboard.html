@@ -1,230 +1,40 @@
 <div class="dash-content">
   <div class="dash-container">
-    <!-- Welcome Header Banner -->
-    <div class="dash-banner">
-      <div>
-        <h1 class="dash-banner__title font-headline-lg">
-          Welcome back, Dr. Reed
-        </h1>
-        <p class="dash-banner__subtitle font-body-md">
-          Lead Practitioner • Medical ID: 884-2103 • Clinical AI Active
-        </p>
-      </div>
-      <div class="dash-banner__actions">
-        <a
-          routerLink="/consultations"
-          class="dash-banner__btn dash-banner__btn--solid"
-        >
-          <span class="material-symbols-outlined">medical_services</span>
-          Start Consult
-        </a>
-        <button type="button" class="dash-banner__btn dash-banner__btn--ghost">
-          <span class="material-symbols-outlined">add</span>
-          Add Patient
-        </button>
-      </div>
-    </div>
+    <!-- Welcome Header Banner Component -->
+    <app-welcome-banner
+      [title]="bannerTitle"
+      [subtitle]="bannerSubtitle"
+      [actions]="bannerActions"
+    ></app-welcome-banner>
 
     <!-- Metrics Bar -->
     <div class="dash-metrics">
-      <div class="dash-metric-card">
-        <div class="dash-metric-card__row">
-          <span class="dash-metric-card__label font-label-sm">Total Patients</span>
-          <span class="material-symbols-outlined dash-metric-card__icon">group</span>
-        </div>
-        <p class="dash-metric-card__value font-headline-lg">
-          7
-        </p>
-        <span class="dash-metric-card__hint dash-metric-card__hint--tertiary font-label-sm">Active in directory</span>
-      </div>
-
-      <div class="dash-metric-card">
-        <div class="dash-metric-card__row">
-          <span class="dash-metric-card__label font-label-sm">Critical Flags</span>
-          <span class="material-symbols-outlined dash-metric-card__icon dash-metric-card__icon--error">warning</span>
-        </div>
-        <p class="dash-metric-card__value dash-metric-card__value--error font-headline-lg">
-          2
-        </p>
-        <span class="dash-metric-card__hint dash-metric-card__hint--error font-label-sm">Requires immediate review</span>
-      </div>
-
-      <div class="dash-metric-card">
-        <div class="dash-metric-card__row">
-          <span class="dash-metric-card__label font-label-sm">Lab Reports</span>
-          <span class="material-symbols-outlined dash-metric-card__icon">description</span>
-        </div>
-        <p class="dash-metric-card__value font-headline-lg">12</p>
-        <span class="dash-metric-card__hint dash-metric-card__hint--muted font-label-sm">CMP & Lipid ready</span>
-      </div>
-
-      <div class="dash-metric-card">
-        <div class="dash-metric-card__row">
-          <span class="dash-metric-card__label font-label-sm">AI Insights</span>
-          <span class="material-symbols-outlined dash-metric-card__icon fill">
-            auto_awesome
-          </span>
-        </div>
-        <p class="dash-metric-card__value dash-metric-card__value--primary font-headline-lg">98.4%</p>
-        <span class="dash-metric-card__hint dash-metric-card__hint--tertiary font-label-sm">Accuracy score</span>
-      </div>
+      <app-metric-card
+        *ngFor="let metric of metrics"
+        [metric]="metric"
+      ></app-metric-card>
     </div>
 
     <!-- Main Content Grid -->
     <div class="dash-grid">
-      <!-- Urgent / High Risk Queue -->
-      <div class="dash-queue">
-        <div class="dash-queue__head">
-          <h2 class="dash-queue__title font-headline-md">
-            <span class="material-symbols-outlined dash-queue__title-icon">error</span>
-            High Priority Patients Queue
-          </h2>
-          <a
-            routerLink="/patients"
-            class="dash-queue__view-all font-label-sm"
-          >
-            View All <span class="material-symbols-outlined">arrow_forward</span>
-          </a>
-        </div>
+      <!-- High Priority Patients Queue Component -->
+      <app-patients-queue
+        [title]="'High Priority Patients Queue'"
+        [icon]="'error'"
+        [patients]="patients"
+      ></app-patients-queue>
+      
 
-        <div class="dash-queue__list">
-          <a
-            routerLink="/patients"
-            class="dash-queue__item"
-          >
-            <div class="dash-queue__item-left">
-              <div class="dash-queue__avatar">
-                EV
-              </div>
-              <div>
-                <h3 class="dash-queue__name">Eleanor Vance</h3>
-                <p class="dash-queue__meta font-label-sm">
-                  MRN-100001 • Vitals: BP 145/90
-                </p>
-              </div>
-            </div>
-
-            <div class="dash-queue__item-right">
-              <span class="dash-queue__badge dash-queue__badge--high font-label-sm">
-                HIGH RISK
-              </span>
-              <span class="material-symbols-outlined dash-queue__chevron">
-                chevron_right
-              </span>
-            </div>
-          </a>
-          <a
-            routerLink="/patients"
-            class="dash-queue__item"
-          >
-            <div class="dash-queue__item-left">
-              <div class="dash-queue__avatar">
-                JL
-              </div>
-              <div>
-                <h3 class="dash-queue__name">Jameson Locke</h3>
-                <p class="dash-queue__meta font-label-sm">
-                  MRN-100002 • Vitals: BP 122/80
-                </p>
-              </div>
-            </div>
-
-            <div class="dash-queue__item-right">
-              <span class="dash-queue__badge dash-queue__badge--neutral font-label-sm">
-                STABLE
-              </span>
-              <span class="material-symbols-outlined dash-queue__chevron">
-                chevron_right
-              </span>
-            </div>
-          </a>
-          <a
-            routerLink="/patients"
-            class="dash-queue__item"
-          >
-            <div class="dash-queue__item-left">
-              <div class="dash-queue__avatar">
-                SJ
-              </div>
-              <div>
-                <h3 class="dash-queue__name">Sarah Jenkins</h3>
-                <p class="dash-queue__meta font-label-sm">
-                  MRN-100003 • Vitals: BP 128/82
-                </p>
-              </div>
-            </div>
-
-            <div class="dash-queue__item-right">
-              <span class="dash-queue__badge dash-queue__badge--neutral font-label-sm">
-                RECOVERING
-              </span>
-              <span class="material-symbols-outlined dash-queue__chevron">
-                chevron_right
-              </span>
-            </div>
-          </a>
-          <a
-            routerLink="/patients"
-            class="dash-queue__item"
-          >
-            <div class="dash-queue__item-left">
-              <div class="dash-queue__avatar">
-                JD
-              </div>
-              <div>
-                <h3 class="dash-queue__name">John Doe</h3>
-                <p class="dash-queue__meta font-label-sm">
-                  MRN-100004 • Vitals: BP 124/80
-                </p>
-              </div>
-            </div>
-
-            <div class="dash-queue__item-right">
-              <span class="dash-queue__badge dash-queue__badge--neutral font-label-sm">
-                Active
-              </span>
-              <span class="material-symbols-outlined dash-queue__chevron">
-                chevron_right
-              </span>
-            </div>
-          </a>
-        </div>
-      </div>
-
-      <!-- Today's Schedule & Recent AI Summaries -->
-      <div class="dash-side-col">
-        <div class="dash-schedule">
-          <h2 class="dash-schedule__title font-headline-md">
-            <span class="material-symbols-outlined dash-schedule__title-icon">event</span>
-            Today's Schedule
-          </h2>
-          <div class="dash-schedule__list">
-            <div class="dash-schedule__item">
-              <div>
-                <p class="dash-schedule__name">Eleanor Vance</p>
-                <p class="dash-schedule__detail">Follow-up HbA1c & Diabetes</p>
-              </div>
-              <span class="dash-schedule__time dash-schedule__time--accent font-label-sm">10:42 AM</span>
-            </div>
-
-            <div class="dash-schedule__item">
-              <div>
-                <p class="dash-schedule__name">Jameson Locke</p>
-                <p class="dash-schedule__detail">Routine Checkup & Vitals</p>
-              </div>
-              <span class="dash-schedule__time dash-schedule__time--muted font-label-sm">02:00 PM</span>
-            </div>
-
-            <div class="dash-schedule__item">
-              <div>
-                <p class="dash-schedule__name">Sarah Jenkins</p>
-                <p class="dash-schedule__detail">Post-op ACL Knee Review</p>
-              </div>
-              <span class="dash-schedule__time dash-schedule__time--muted font-label-sm">03:30 PM</span>
-            </div>
-          </div>
-        </div>
-      </div>
+      <!-- Today's Schedule Component -->
+      <!-- <div class="dash-side-col">
+        <app-schedule-list
+          [title]="'Today\'s Schedule'"
+          [icon]="'event'"
+          [scheduleItems]="scheduleItems"
+        ></app-schedule-list>
+      </div> -->
     </div>
   </div>
 </div>
+
+

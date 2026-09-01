@@ -1,0 +1,26 @@
+<div class="dash-metric-card">
+  <div class="dash-metric-card__row">
+    <span class="dash-metric-card__label font-label-sm">{{ metric.label }}</span>
+    <span
+      class="material-symbols-outlined dash-metric-card__icon"
+      [ngClass]="metric.variant === 'error' ? 'dash-metric-card__icon--error' : ''"
+    >
+      {{ metric.icon }} 
+    </span>
+  </div>
+  <p
+    class="dash-metric-card__value font-headline-lg"
+    [ngClass]="{
+      'dash-metric-card__value--error': metric.variant === 'error',
+      'dash-metric-card__value--primary': metric.variant === 'primary'
+    }"
+  >
+    {{ metric.value }}
+  </p>
+  <span
+    class="dash-metric-card__hint font-label-sm"
+    [ngClass]="'dash-metric-card__hint--' + (metric.variant === 'default' ? 'tertiary' : metric.variant)"
+  >
+    {{ metric.hint }}
+  </span>
+</div>

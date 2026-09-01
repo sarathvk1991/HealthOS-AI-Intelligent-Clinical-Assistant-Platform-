@@ -1,0 +1,9 @@
+<div class="dash-schedule__item">
+  <div>
+    <p class="dash-schedule__name">{{ item.patientName }}</p>
+    <p class="dash-schedule__detail">{{ item.detail }}</p>
+  </div>
+  <span [ngClass]="getTimeClass()" class="dash-schedule__time font-label-sm">
+    {{ item.time }}
+  </span>
+</div>

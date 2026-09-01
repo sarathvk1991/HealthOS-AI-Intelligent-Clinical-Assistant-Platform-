@@ -1,0 +1,20 @@
+<div class="dash-banner">
+  <div>
+    <h1 class="dash-banner__title font-headline-lg">{{ title }}</h1>
+    <p class="dash-banner__subtitle font-body-md">{{ subtitle }}</p>
+  </div>
+  <div class="dash-banner__actions">
+    <a
+      *ngFor="let action of actions"
+      [routerLink]="action.route"
+      (click)="action.action && onAction(action)"
+      [ngClass]="[
+        'dash-banner__btn',
+        'dash-banner__btn--' + action.variant
+      ]"
+    >
+      <span class="material-symbols-outlined">{{ action.icon }}</span>
+      {{ action.label }}
+    </a>
+  </div>
+</div>
